@@ -41,22 +41,25 @@
         // scene.add(mesh);
 
         meshX = -10;
-        for (var i = 0; i<100;i++) {
+        for (var i = 0; i<8;i++) {
             var mesh = new THREE.Mesh(geometry, material);
             mesh.position.x = (Math.random() - 0.5) * 0;
             mesh.position.y = (Math.random() - 0.5) * 0;
             mesh.position.z = (Math.random() - 0.5) * 0;
+            mesh.rotation.x = 1;
+            mesh.rotation.y = 1;
+            mesh.rotation.z = 1;
             scene.add(mesh);
             meshX+=1;
         }
 
 
         var light = new THREE.PointLight(0xFFFFFF, 1, 1000)
-        light.position.set(0, 0, 0);
+        light.position.set(0, -25, 10);
         scene.add(light);
 
         var light = new THREE.PointLight(0xFFFFFF, 2, 1000)
-        light.position.set(0, 0, 25);
+        light.position.set(0, 25, 10);
         scene.add(light);
 
         var render = function() {
@@ -64,7 +67,7 @@
             renderer.render(scene, camera);
         }
 
-        function onMouseMove(event) {
+        function onMouseClick(event) {
             event.preventDefault();
 
             mouse.x = ( event.clientX / window.innerWidth ) * 2 -1;
@@ -75,20 +78,18 @@
             var intersects = raycaster.intersectObjects(scene.children, true);
             for (var i = 0; i < intersects.length; i++) {
                 this.tl = new TimelineMax();
-                this.tl.to(intersects[i].object.position, 30, {x: i * ((Math.random() - 0.5) * 1), ease: Expo.easeOut})
-                this.tl.to(intersects[i].object.position, 30, {y: i * ((Math.random() - 0.5) * 1), ease: Expo.easeOut}, "=-30")
-                this.tl.to(intersects[i].object.position, 30, {z: i * ((Math.random() - 0.5) * 3), ease: Expo.easeOut}, "=-30")
-                this.tl.to(intersects[i].object.rotation, 30, {x: i * ((Math.random() - 0.5) * 4), ease: Expo.easeOut}, "=-30")
-                this.tl.to(intersects[i].object.rotation, 30, {y: i * ((Math.random() - 0.5) * 4), ease: Expo.easeOut}, "=-30")
-                this.tl.to(intersects[i].object.rotation, 30, {z: i * ((Math.random() - 0.5) * 4), ease: Expo.easeOut}, "=-30")
-                this.tl.to(intersects[i].object.position, 4, {x: 0, ease: Expo.easeIn})
-                this.tl.to(intersects[i].object.position, 4, {y: 0, ease: Expo.easeIn}, "=-4")
-                this.tl.to(intersects[i].object.position, 4, {z: 0, ease: Expo.easeIn}, "=-4")
-                this.tl.to(intersects[i].object.rotation, 4, {x: 1, ease: Expo.easeIn}, "=-4")
-                this.tl.to(intersects[i].object.rotation, 4, {y: 1, ease: Expo.easeIn}, "=-4")
-                this.tl.to(intersects[i].object.rotation, 4, {z: 1, ease: Expo.easeIn}, "=-4")
-
-
+                this.tl.to(intersects[i].object.position, 5, {x: 5 * ((Math.random() - 0.5) * 5), ease: Expo.easeOut})
+                this.tl.to(intersects[i].object.position, 5, {y: 5 * ((Math.random() - 0.5) * 5), ease: Expo.easeOut}, "=-5")
+                this.tl.to(intersects[i].object.position, 5, {z: 5 * ((Math.random() - 0.5) * 5), ease: Expo.easeOut}, "=-5")
+                this.tl.to(intersects[i].object.rotation, 5, {x: ((Math.random() - 0.5) * 5), ease: Expo.easeOut}, "=-5")
+                this.tl.to(intersects[i].object.rotation, 5, {y: ((Math.random() - 0.5) * 5), ease: Expo.easeOut}, "=-5")
+                this.tl.to(intersects[i].object.rotation, 5, {z: ((Math.random() - 0.5) * 5), ease: Expo.easeOut}, "=-5")
+                // this.tl.to(intersects[i].object.position, 5, {x: 0, ease: Expo.easeIn})
+                // this.tl.to(intersects[i].object.position, 5, {y: 0, ease: Expo.easeIn}, "=-5")
+                // this.tl.to(intersects[i].object.position, 5, {z: 0, ease: Expo.easeIn}, "=-5")
+                // this.tl.to(intersects[i].object.rotation, 5, {x: 1, ease: Expo.easeIn}, "=-5")
+                // this.tl.to(intersects[i].object.rotation, 5, {y: 1, ease: Expo.easeIn}, "=-5")
+                // this.tl.to(intersects[i].object.rotation, 5, {z: 1, ease: Expo.easeIn}, "=-5")
             }
         }
 
@@ -96,7 +97,7 @@
 
 
 
-        window.addEventListener('mousemove', onMouseMove);
+        window.addEventListener('mousedown', onMouseClick);
 
     </script>
 </body>
