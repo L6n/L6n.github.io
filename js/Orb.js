@@ -1,7 +1,7 @@
 var scene = new THREE.Scene();
         
 var camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000)
-camera.position.set(0, 0, 25);
+camera.position.set(0, 0, 200);
 camera.lookAt(0, 0, 0);
 
 var renderer = new THREE.WebGLRenderer({antialias: true});
@@ -26,7 +26,7 @@ var material = new THREE.MeshLambertMaterial({color: 0xffffff})
 // scene.add(mesh);
 
 meshX = -10;
-for (var i = 0; i<8; i++) {
+for (var i = 0; i<72; i++) {
     var mesh = new THREE.Mesh(geometry, material);
     mesh.position.x = 0;
     mesh.position.y = 0;
@@ -37,7 +37,6 @@ for (var i = 0; i<8; i++) {
     scene.add(mesh);
     meshX+=1;
 }
-
 
 var light = new THREE.PointLight(0xFFFFFF, 1, 1000)
 light.position.set(0, -25, 10);
@@ -62,10 +61,13 @@ function onMouseClick(event) {
 
     var intersects = raycaster.intersectObjects(scene.children, true);
     for (var i = 0; i < intersects.length; i++) {
+            angle = i;
+            x = (1+angle)*Math.cos(angle);
+            y = (1+angle)*Math.sin(angle);
         this.tl = new TimelineMax();
-        this.tl.to(intersects[i].object.position, 3, {x: ((Math.random() - 0.5) * 4) * Math.PI, ease: Expo.easeOut})
-        this.tl.to(intersects[i].object.position, 3, {y: ((Math.random() - 0.5) * 4) * Math.PI, ease: Expo.easeOut}, "=-3")
-        this.tl.to(intersects[i].object.position, 3, {z: ((Math.random() - 0.5) * 4) * Math.PI, ease: Expo.easeOut}, "=-3")
+        this.tl.to(intersects[i].object.position, 3, {x: x, ease: Expo.easeOut})
+        this.tl.to(intersects[i].object.position, 3, {y: y, ease: Expo.easeOut}, "=-3")
+        this.tl.to(intersects[i].object.position, 3, {z: i, ease: Expo.easeOut}, "=-3")
         this.tl.to(intersects[i].object.rotation, 3, {x: ((Math.random() - 0.5) * 4), ease: Expo.easeOut}, "=-3")
         this.tl.to(intersects[i].object.rotation, 3, {y: ((Math.random() - 0.5) * 4), ease: Expo.easeOut}, "=-3")
         this.tl.to(intersects[i].object.rotation, 3, {z: ((Math.random() - 0.5) * 4), ease: Expo.easeOut}, "=-3")
