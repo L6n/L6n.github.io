@@ -7,13 +7,16 @@ var Ops=Ops || {};
 Ops.Gl=Ops.Gl || {};
 Ops.Math=Ops.Math || {};
 Ops.Anim=Ops.Anim || {};
-Ops.Array=Ops.Array || {};
+Ops.User=Ops.User || {};
 Ops.Value=Ops.Value || {};
+Ops.Array=Ops.Array || {};
 Ops.Sidebar=Ops.Sidebar || {};
+Ops.Boolean=Ops.Boolean || {};
+Ops.User.l6n=Ops.User.l6n || {};
 Ops.WebAudio=Ops.WebAudio || {};
-Ops.Gl.Matrix=Ops.Gl.Matrix || {};
 Ops.Gl.Meshes=Ops.Gl.Meshes || {};
 Ops.Gl.Shader=Ops.Gl.Shader || {};
+Ops.Gl.Matrix=Ops.Gl.Matrix || {};
 Ops.Deprecated=Ops.Deprecated || {};
 Ops.Deprecated.Array=Ops.Deprecated.Array || {};
 
@@ -2941,117 +2944,68 @@ CABLES.OPS["5a681c35-78ce-4cb3-9858-bc79c34c6819"]={f:Ops.Sidebar.Sidebar,objNam
 
 // **************************************************************
 // 
-// Ops.Sidebar.Toggle
+// Ops.User.l6n.SouncloudURLInput
 // 
 // **************************************************************
 
-Ops.Sidebar.Toggle = function()
+Ops.User.l6n.SouncloudURLInput = function()
 {
 CABLES.Op.apply(this,arguments);
 const op=this;
 const attachments={};
-const DEFAULT_VALUE_DEFAULT = true;
-
 // inputs
-var parentPort = op.inObject('link');
-var labelPort = op.inValueString('Text', 'Toggle');
-const inputValuePort = op.inValueBool('Input', DEFAULT_VALUE_DEFAULT);
-const setDefaultValueButtonPort = op.inTriggerButton('Set Default');
-var defaultValuePort = op.inValueBool('Default', DEFAULT_VALUE_DEFAULT);
-defaultValuePort.setUiAttribs({ hidePort: true, greyout: true });
+const parentPort = op.inObject('Link');
+const labelPort = op.inValueString('Text', 'Text');
+const defaultValuePort = op.inValueString('Default', '');
 
 // outputs
-var siblingsPort = op.outObject('childs');
-var valuePort = op.outValue('Value', defaultValuePort.get());
+const siblingsPort = op.outObject('Children');
+const valuePort = op.outString('Result', defaultValuePort.get());
 
 // vars
 var el = document.createElement('div');
 el.classList.add('sidebar__item');
-el.classList.add('sidebar__toggle');
-if(DEFAULT_VALUE_DEFAULT) {
-    el.classList.add('sidebar__toggle--active');
-}
-el.addEventListener('click', onInputClick);
+el.classList.add('sidebar__text-input');
 var label = document.createElement('div');
 label.classList.add('sidebar__item-label');
 var labelText = document.createTextNode(labelPort.get());
 label.appendChild(labelText);
 el.appendChild(label);
-var value = document.createElement('div');
-value.textContent = DEFAULT_VALUE_DEFAULT;
-value.classList.add('sidebar__item-value-label');
-el.appendChild(value);
-var input = document.createElement('div');
-input.classList.add('sidebar__toggle-input');
+//var inputWrapper = document.createElement('div');
+//inputWrapper.classList.add('sidebar__text-input-input-wrapper');
+//el.appendChild(inputWrapper);
+var input = document.createElement('input');
+input.classList.add('sidebar__text-input-input');
+input.setAttribute('type', 'text');
+input.setAttribute('value', defaultValuePort.get());
+//inputWrapper.appendChild(input);
 el.appendChild(input);
+input.addEventListener('input', onInput);
+op.toWorkPortsNeedToBeLinked(parentPort);
 
 // events
 parentPort.onChange = onParentChanged;
 labelPort.onChange = onLabelTextChanged;
 defaultValuePort.onChange = onDefaultValueChanged;
-inputValuePort.onChange = onInputValuePortChanged;
 op.onDelete = onDelete;
-setDefaultValueButtonPort.onTriggered = setDefaultValue;
-op.toWorkNeedsParent('Ops.Sidebar.Sidebar');
 
 // functions
 
-function setDefaultValue() {
-  const defaultValue = inputValuePort.get();
-  defaultValuePort.set(defaultValue);
-  valuePort.set(defaultValue);
-  if(CABLES.UI  && gui.patch().isCurrentOp(op)){
-    gui.patch().showOpParams(op); /* update DOM */
-  }
-}
-
-function onInputClick() {
-    el.classList.toggle('sidebar__toggle--active')
-    if(el.classList.contains('sidebar__toggle--active')) {
-        valuePort.set(true);
-        inputValuePort.set(true);
-        value.textContent = 'true';
-    } else {
-        valuePort.set(false);
-        inputValuePort.set(false);
-        value.textContent = 'false';
-    }
-    if(CABLES.UI  && gui.patch().isCurrentOp(op)){
-        gui.patch().showOpParams(op); /* update DOM */
-    }
-}
-
-function onInputValuePortChanged() {
-    var inputValue = inputValuePort.get();
-    if(inputValue) {
-        el.classList.add('sidebar__toggle--active');
-        valuePort.set(true);
-        value.textContent = 'true';
-    } else {
-        el.classList.remove('sidebar__toggle--active');
-        valuePort.set(false);
-        value.textContent = 'false';
-    }
+function onInput(ev) {
+    valuePort.set(ev.target.value);
 }
 
 function onDefaultValueChanged() {
-    /*
     var defaultValue = defaultValuePort.get();
-    if(defaultValue) {
-        el.classList.add('sidebar__toggle--active');
-        valuePort.set(true);
-    } else {
-        el.classList.remove('sidebar__toggle--active');
-        valuePort.set(false);
-    }
-    */
+    valuePort.set(defaultValue);
+    input.value = defaultValue;
 }
 
 function onLabelTextChanged() {
     var labelText = labelPort.get();
     label.textContent = labelText;
     if(CABLES.UI) {
-        op.setTitle('Toggle: ' + labelText);
+        op.setTitle('Text Input: ' + labelText);
     }
 }
 
@@ -3093,7 +3047,564 @@ function removeElementFromDOM(el) {
 
 };
 
-Ops.Sidebar.Toggle.prototype = new CABLES.Op();
-CABLES.OPS["334bcf18-e2d0-46ad-bf7a-0d36c3d29af9"]={f:Ops.Sidebar.Toggle,objName:"Ops.Sidebar.Toggle"};
+Ops.User.l6n.SouncloudURLInput.prototype = new CABLES.Op();
+
+
+
+
+
+// **************************************************************
+// 
+// Ops.Sidebar.DisplayValue
+// 
+// **************************************************************
+
+Ops.Sidebar.DisplayValue = function()
+{
+CABLES.Op.apply(this,arguments);
+const op=this;
+const attachments={};
+// inputs
+var parentPort = op.inObject('link');
+var labelPort = op.inValueString('Text', 'Value');
+var valuePort = op.inValueString('Value', '');
+
+// outputs
+var siblingsPort = op.outObject('childs');
+
+// vars
+var el = document.createElement('div');
+el.classList.add('sidebar__item');
+el.classList.add('sidebar__value-display');
+var label = document.createElement('div');
+label.classList.add('sidebar__item-label');
+var labelText = document.createTextNode(labelPort.get());
+label.appendChild(labelText);
+el.appendChild(label);
+var value = document.createElement('div');
+value.textContent = valuePort.get();
+value.classList.add('sidebar__item-value-label');
+el.appendChild(value);
+
+// events
+parentPort.onChange = onParentChanged;
+labelPort.onChange = onLabelTextChanged;
+valuePort.onChange = onValueChanged;
+op.onDelete = onDelete;
+
+// functions
+
+function onValueChanged() {
+    value.textContent = valuePort.get();
+}
+
+function onLabelTextChanged() {
+    var labelText = labelPort.get();
+    label.textContent = labelText;
+    if(CABLES.UI) {
+        op.setTitle('Value: ' + labelText);    
+    }
+}
+
+function onParentChanged() {
+    var parent = parentPort.get();
+    if(parent && parent.parentElement) {
+        parent.parentElement.appendChild(el);
+        siblingsPort.set(null);
+        siblingsPort.set(parent);
+    } else { // detach
+        if(el.parentElement) {
+            el.parentElement.removeChild(el);    
+        }
+    }
+}
+
+function showElement(el) {
+    if(el) {
+        el.style.display = 'block';
+    }
+}
+
+function hideElement(el) {
+    if(el) {
+        el.style.display = 'none';
+    }
+}
+
+function onDelete() {
+    removeElementFromDOM(el);
+}
+
+function removeElementFromDOM(el) {
+    if(el && el.parentNode && el.parentNode.removeChild) {
+        el.parentNode.removeChild(el);    
+    }
+}
+
+
+};
+
+Ops.Sidebar.DisplayValue.prototype = new CABLES.Op();
+CABLES.OPS["3cdfb818-64ac-47f6-86fb-fdaf84343956"]={f:Ops.Sidebar.DisplayValue,objName:"Ops.Sidebar.DisplayValue"};
+
+
+
+
+// **************************************************************
+// 
+// Ops.User.l6n.GetSoundcloud
+// 
+// **************************************************************
+
+Ops.User.l6n.GetSoundcloud = function()
+{
+CABLES.Op.apply(this,arguments);
+const op=this;
+const attachments={};
+const clientId="6f693b837b47b59a17403e79bcff3626";
+
+const
+    soundCloudUrl=op.inString("SoundCloud URL"),
+    streamUrl=op.outValue("Stream URL"),
+    artworkUrl=op.outValue("Artwork URL"),
+    title=op.outValue("Title"),
+    result=op.outObject("Result");
+
+streamUrl.ignoreValueSerialize=true;
+artworkUrl.ignoreValueSerialize=true;
+streamUrl.ignoreValueSerialize=true;
+title.ignoreValueSerialize=true;
+soundCloudUrl.onChange=resolve;
+
+function resolve()
+{
+    if(soundCloudUrl.get())
+        CABLES.ajax(
+            'https://api.soundcloud.com/resolve.json?url='+soundCloudUrl.get()+'&client_id='+clientId,
+            function(err,_data,xhr)
+            {
+                var data=JSON.parse(_data);
+                streamUrl.set(data.stream_url+"?client_id="+clientId);
+                artworkUrl.set(data.artwork_url);
+                title.set(data.title);
+                console.log('stream url:'+data.stream_url);
+                console.log(data);
+            });
+
+}
+
+
+};
+
+Ops.User.l6n.GetSoundcloud.prototype = new CABLES.Op();
+
+
+
+
+
+// **************************************************************
+// 
+// Ops.WebAudio.AudioPlayer
+// 
+// **************************************************************
+
+Ops.WebAudio.AudioPlayer = function()
+{
+CABLES.Op.apply(this,arguments);
+const op=this;
+const attachments={};
+var self = this;
+var patch=this.patch;
+// todo: audio object: firefox does not support .loop=true
+//
+// myAudio = new Audio('someSound.ogg');
+// myAudio.addEventListener('ended', function() {
+//     this.currentTime = 0;
+//     this.play();
+// }, false);
+// myAudio.play();
+
+
+
+this.file=op.inFile("file","audio");
+var play=op.addInPort(new CABLES.Port(this,"play",CABLES.OP_PORT_TYPE_VALUE,{ display:'bool' }));
+var autoPlay=op.addInPort(new CABLES.Port(this,"Autoplay",CABLES.OP_PORT_TYPE_VALUE,{ display:'bool' }));
+
+var volume=this.addInPort(new CABLES.Port(this,"volume",CABLES.OP_PORT_TYPE_VALUE,{ display:'range' }));
+var synchronizedPlayer=this.addInPort(new CABLES.Port(this,"Synchronized Player",CABLES.OP_PORT_TYPE_VALUE,{ display:'bool' }));
+
+this.audioOut=this.addOutPort(new CABLES.Port(this, "audio out",CABLES.OP_PORT_TYPE_OBJECT));
+var outPlaying=this.addOutPort(new CABLES.Port(this, "playing",CABLES.OP_PORT_TYPE_VALUE));
+var outEnded=this.addOutPort(new CABLES.Port(this, "ended",CABLES.OP_PORT_TYPE_FUNCTION));
+
+
+var doLoop=op.addInPort(new CABLES.Port(this,"Loop",CABLES.OP_PORT_TYPE_VALUE,{ display:'bool' }));
+
+autoPlay.set(true);
+volume.set(1.0);
+
+outPlaying.ignoreValueSerialize=true;
+outEnded.ignoreValueSerialize=true;
+
+window.AudioContext = window.AudioContext||window.webkitAudioContext;
+if(!window.audioContext) window.audioContext = new AudioContext();
+
+if(!window.audioContext) {
+    if(this.patch.config.onError) this.patch.config.onError('sorry, could not initialize WebAudio. Please check if your Browser supports WebAudio');
+}
+
+this.filter = audioContext.createGain();
+self.audio=null;
+var buffer=null;
+var playing=false;
+outPlaying.set(false);
+
+
+play.onChange=function()
+{
+
+    if(!self.audio)
+    {
+        op.uiAttr({'error':'No audio file selected'});
+        return;
+    }
+    else op.uiAttr({'error':null});
+
+
+    if(play.get())
+    {
+        playing=true;
+        var prom = self.audio.play();
+        if (prom instanceof Promise)
+            prom.then(null,function(e){});
+    }
+    else
+    {
+        playing=false;
+        self.audio.pause();
+    }
+    outPlaying.set(playing);
+};
+
+
+
+this.onDelete=function()
+{
+    if(self.audio) self.audio.pause();
+};
+
+
+doLoop.onChange=function()
+{
+    if(self.audio) self.audio.loop=doLoop.get();
+    else if(self.media) self.media.loop=doLoop.get();
+};
+
+function seek()
+{
+    // if(!window.gui && CGL.getLoadingStatus()>=1.0)
+    // {
+    //     console.log('seek canceled',CGL.getLoadingStatus());
+    //     return;
+    // }
+
+    if(!synchronizedPlayer.get())
+    {
+        if(!self.audio)return;
+
+        var prom;
+        if(self.patch.timer.isPlaying() && self.audio.paused) prom = self.audio.play();
+        else if(!self.patch.timer.isPlaying() && !self.audio.paused) prom = self.audio.pause();
+
+        if (prom instanceof Promise)
+            prom.then(null, function (e) {});
+
+        self.audio.currentTime=self.patch.timer.getTime();
+    }
+    else
+    {
+        if(buffer===null)return;
+
+        var t=self.patch.timer.getTime();
+        if(!isFinite(t))
+        {
+            return;
+            // console.log('not finite time...',t);
+            // t=0.0;
+        }
+
+        playing=false;
+
+        // console.log('seek.....',self.patch.timer.isPlaying());
+
+        if(self.patch.timer.isPlaying() )
+        {
+            console.log('play!');
+            outPlaying.set(true);
+
+            self.media.start(t);
+            playing=true;
+        }
+    }
+
+}
+
+function playPause()
+{
+    if(!self.audio)return;
+
+    var prom;
+    if(self.patch.timer.isPlaying()) prom = self.audio.play();
+    else prom = self.audio.pause();
+    if (prom instanceof Promise)
+        prom.then(null, function (e) {});
+}
+
+function updateVolume()
+{
+    // self.filter.gain.value=(volume.get() || 0)*op.patch.config.masterVolume;
+    self.filter.gain.setValueAtTime((volume.get() || 0) * op.patch.config.masterVolume, window.audioContext.currentTime);
+}
+
+volume.onChange=updateVolume;
+op.onMasterVolumeChanged=updateVolume;
+
+var firstTime=true;
+var loadingFilename='';
+this.file.onChange=function()
+{
+    if(!self.file.get())return;
+    loadingFilename=op.patch.getFilePath(self.file.get());
+
+    var loadingId=patch.loading.start('audioplayer',self.file.get());
+
+
+    if(!synchronizedPlayer.get())
+    {
+        if(self.audio)
+        {
+            self.audio.pause();
+            outPlaying.set(false);
+        }
+        self.audio = new Audio();
+
+// console.log('load audio',self.file.val);
+
+        self.audio.crossOrigin = "anonymous";
+        self.audio.src = op.patch.getFilePath(self.file.get());
+        self.audio.loop = doLoop.get();
+        self.audio.crossOrigin = "anonymous";
+
+        var canplaythrough=function()
+        {
+            if(autoPlay.get() || play.get()){
+              var prom = self.audio.play();
+              if (prom instanceof Promise)
+                prom.then(null,function(e){});
+            }
+            outPlaying.set(true);
+            patch.loading.finished(loadingId);
+            self.audio.removeEventListener('canplaythrough',canplaythrough, false);
+        };
+
+        self.audio.addEventListener('canplaythrough',canplaythrough, false);
+
+        self.audio.addEventListener('ended',function()
+        {
+            // console.log('audio player ended...');
+            outPlaying.set(false);
+            playing=false;
+            outEnded.trigger();
+        }, false);
+
+
+        self.media = audioContext.createMediaElementSource(self.audio);
+        self.media.connect(self.filter);
+        self.audioOut.val = self.filter;
+    }
+    else
+    {
+        self.media = audioContext.createBufferSource();
+        self.media.loop=doLoop.get();
+
+        var request = new XMLHttpRequest();
+
+        request.open( 'GET', op.patch.getFilePath(self.file.get()), true );
+        request.responseType = 'arraybuffer';
+
+        request.onload = function()
+        {
+            var audioData = request.response;
+
+            audioContext.decodeAudioData( audioData, function(res)
+            {
+                buffer=res;
+                // console.log('sound load complete');
+                self.media.buffer = res;
+                self.media.connect(self.filter);
+                self.audioOut.val = self.filter;
+                self.media.loop=doLoop.get();
+
+                patch.loading.finished(loadingId);
+
+                // if(!window.gui)
+                // {
+                //     self.media.start(0);
+                //     playing=true;
+                // }
+            } );
+
+        };
+
+        request.send();
+
+        self.patch.timer.onPlayPause(seek);
+        self.patch.timer.onTimeChange(seek);
+
+    }
+
+};
+
+
+};
+
+Ops.WebAudio.AudioPlayer.prototype = new CABLES.Op();
+CABLES.OPS["46f34657-e42b-421b-a632-0e76d190e9ff"]={f:Ops.WebAudio.AudioPlayer,objName:"Ops.WebAudio.AudioPlayer"};
+
+
+
+
+// **************************************************************
+// 
+// Ops.Sidebar.Button
+// 
+// **************************************************************
+
+Ops.Sidebar.Button = function()
+{
+CABLES.Op.apply(this,arguments);
+const op=this;
+const attachments={};
+// inputs
+var parentPort = op.inObject('link');
+var buttonTextPort = op.inValueString('Text', 'Button');
+
+// outputs
+var siblingsPort = op.outObject('childs');
+var buttonPressedPort = op.outTrigger('Pressed Trigger');
+
+// vars
+var el = document.createElement('div');
+el.classList.add('sidebar__item');
+el.classList.add('sidebar--button');
+var input = document.createElement('div');
+input.classList.add('sidebar__button-input');
+el.appendChild(input);
+input.addEventListener('click', onButtonClick);
+var inputText = document.createTextNode(buttonTextPort.get());
+input.appendChild(inputText);
+op.toWorkNeedsParent('Ops.Sidebar.Sidebar');
+
+// events
+parentPort.onChange = onParentChanged;
+buttonTextPort.onChange = onButtonTextChanged;
+op.onDelete = onDelete;
+
+// functions
+
+function onButtonClick() {
+    buttonPressedPort.trigger();
+}
+
+function onButtonTextChanged() {
+    var buttonText = buttonTextPort.get();
+    input.textContent = buttonText;
+    if(CABLES.UI) {
+        op.setTitle('Button: ' + buttonText);
+    }
+}
+
+function onParentChanged() {
+    var parent = parentPort.get();
+    if(parent && parent.parentElement) {
+        parent.parentElement.appendChild(el);
+        siblingsPort.set(null);
+        siblingsPort.set(parent);
+    } else { // detach
+        if(el.parentElement) {
+            el.parentElement.removeChild(el);
+        }
+    }
+}
+
+function showElement(el) {
+    if(el) {
+        el.style.display = 'block';
+    }
+}
+
+function hideElement(el) {
+    if(el) {
+        el.style.display = 'none';
+    }
+}
+
+function onDelete() {
+    removeElementFromDOM(el);
+}
+
+function removeElementFromDOM(el) {
+    if(el && el.parentNode && el.parentNode.removeChild) {
+        el.parentNode.removeChild(el);
+    }
+}
+
+
+};
+
+Ops.Sidebar.Button.prototype = new CABLES.Op();
+CABLES.OPS["118df748-16d1-46f4-b8fc-38d7cc5a0aab"]={f:Ops.Sidebar.Button,objName:"Ops.Sidebar.Button"};
+
+
+
+
+// **************************************************************
+// 
+// Ops.Boolean.ToggleBool
+// 
+// **************************************************************
+
+Ops.Boolean.ToggleBool = function()
+{
+CABLES.Op.apply(this,arguments);
+const op=this;
+const attachments={};
+const
+    trigger=op.inTriggerButton("trigger"),
+    reset=op.inTriggerButton("reset"),
+    outBool=op.outValue("result");
+
+var theBool=false;
+outBool.set(theBool);
+outBool.ignoreValueSerialize=true;
+
+trigger.onTriggered=function()
+{
+    theBool=!theBool;
+    outBool.set(theBool);
+};
+
+reset.onTriggered=function()
+{
+    theBool=false;
+    outBool.set(theBool);
+};
+
+
+
+};
+
+Ops.Boolean.ToggleBool.prototype = new CABLES.Op();
+CABLES.OPS["712a25f4-3a93-4042-b8c5-2f56169186cc"]={f:Ops.Boolean.ToggleBool,objName:"Ops.Boolean.ToggleBool"};
 
 
