@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Experiment</title>
+    <title>L6n Audio Experiment</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
     <style>
         body { 
@@ -20,8 +20,7 @@
     <canvas id="glcanvas" width="100vw" height="100vh"></canvas>
 
     <libs/>
-    <script type="text/javascript" src="js/libs.core.min.js"></script><script type="text/javascript" src="js/util.min.js"></script><script type="text/javascript" src="js/ops.js"></script>
-     
+    <script type="text/javascript" src="js/libs.core.min.js"></script><script type="text/javascript" src="js/cables.min.js"></script><script type="text/javascript" src="js/ops.js"></script>
     
     <script>
         function showError(errId, errMsg) {
@@ -36,7 +35,7 @@
 
         document.addEventListener('DOMContentLoaded', function(event) {
             CABLES.patch = new CABLES.Patch({
-                patchFile: 'js/Music_Vis_5.json',
+                patchFile: 'js/l6n.background.json',
                 prefixAssetPath: '',
                 glCanvasId: 'glcanvas',
                 glCanvasResizeToWindow: true,
