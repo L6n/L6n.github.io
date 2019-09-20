@@ -2,14 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>L6n Audio Experiment</title>
+    <title>Audio Experiments</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
     <style>
         body { 
             margin: 0;
-            background-color: #000;
-            color: #fff;
-            font-family: Helvetica, Arial, sans-serif;
         }
         canvas {
             display: block;
@@ -18,10 +15,11 @@
 </head>
 <body>
     <canvas id="glcanvas" width="100vw" height="100vh"></canvas>
-
     <libs/>
-    <script type="text/javascript" src="js/libs.core.min.js"></script><script type="text/javascript" src="js/cables.min.js"></script><script type="text/javascript" src="js/ops.js"></script>
-    
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/lib.js"></script>
+    <script type="text/javascript" src="js/ops.js"></script>
+
     <script>
         function showError(errId, errMsg) {
             alert('An error occured: ' + errId + ', ' + errMsg);
@@ -35,7 +33,7 @@
 
         document.addEventListener('DOMContentLoaded', function(event) {
             CABLES.patch = new CABLES.Patch({
-                patchFile: 'js/l6n.background.json',
+                patchFile: 'js/audio.json',
                 prefixAssetPath: '',
                 glCanvasId: 'glcanvas',
                 glCanvasResizeToWindow: true,

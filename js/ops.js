@@ -21,6 +21,14 @@ Ops.Gl.Matrix=Ops.Gl.Matrix || {};
 Ops.Deprecated=Ops.Deprecated || {};
 Ops.Deprecated.Array=Ops.Deprecated.Array || {};
 
+
+
+// **************************************************************
+// 
+// Ops.Gl.Meshes.PointCloudFromArray
+// 
+// **************************************************************
+
 Ops.Gl.Meshes.PointCloudFromArray = function()
 {
 CABLES.Op.apply(this,arguments);
@@ -300,6 +308,15 @@ function update()
 Ops.Array.ArrayPack3.prototype = new CABLES.Op();
 CABLES.OPS["2bcf32fe-3cbd-48fd-825a-61255bebda9b"]={f:Ops.Array.ArrayPack3,objName:"Ops.Array.ArrayPack3"};
 
+
+
+
+// **************************************************************
+// 
+// Ops.Anim.Smooth
+// 
+// **************************************************************
+
 Ops.Anim.Smooth = function()
 {
 CABLES.Op.apply(this,arguments);
@@ -431,6 +448,15 @@ exec.onTriggered = function()
 Ops.Anim.Smooth.prototype = new CABLES.Op();
 CABLES.OPS["5677b5b5-753a-4fbf-9e91-64c81ec68a2f"]={f:Ops.Anim.Smooth,objName:"Ops.Anim.Smooth"};
 
+
+
+
+// **************************************************************
+// 
+// Ops.Array.ArraySin
+// 
+// **************************************************************
+
 Ops.Array.ArraySin = function()
 {
 CABLES.Op.apply(this,arguments);
@@ -504,6 +530,15 @@ function update()
 
 Ops.Array.ArraySin.prototype = new CABLES.Op();
 CABLES.OPS["ded44bae-a24e-48c5-9585-4cb31f331ab6"]={f:Ops.Array.ArraySin,objName:"Ops.Array.ArraySin"};
+
+
+
+
+// **************************************************************
+// 
+// Ops.Array.ArrayMathArray
+// 
+// **************************************************************
 
 Ops.Array.ArrayMathArray = function()
 {
@@ -798,6 +833,15 @@ textureMask.onChange=function()
 Ops.Gl.Shader.PointMaterial.prototype = new CABLES.Op();
 CABLES.OPS["f86a4a07-00ee-4f68-8839-e02d51d1cd2f"]={f:Ops.Gl.Shader.PointMaterial,objName:"Ops.Gl.Shader.PointMaterial"};
 
+
+
+
+// **************************************************************
+// 
+// Ops.Array.ArrayMultiply
+// 
+// **************************************************************
+
 Ops.Array.ArrayMultiply = function()
 {
 CABLES.Op.apply(this,arguments);
@@ -831,6 +875,15 @@ inValue.onChange=inArray.onChange=function()
 
 Ops.Array.ArrayMultiply.prototype = new CABLES.Op();
 CABLES.OPS["a01c344b-4129-4b01-9c8f-36cefe86d7cc"]={f:Ops.Array.ArrayMultiply,objName:"Ops.Array.ArrayMultiply"};
+
+
+
+
+// **************************************************************
+// 
+// Ops.Array.ArraySum
+// 
+// **************************************************************
 
 Ops.Array.ArraySum = function()
 {
@@ -869,6 +922,15 @@ inArray.onChange=function()
 Ops.Array.ArraySum.prototype = new CABLES.Op();
 CABLES.OPS["c6b5bf63-0be8-4eea-acc0-9d32973e665a"]={f:Ops.Array.ArraySum,objName:"Ops.Array.ArraySum"};
 
+
+
+
+// **************************************************************
+// 
+// Ops.Array.ArrayModulo
+// 
+// **************************************************************
+
 Ops.Array.ArrayModulo = function()
 {
 CABLES.Op.apply(this,arguments);
@@ -903,6 +965,15 @@ inValue.onChange = inArray.onChange = function()
 
 Ops.Array.ArrayModulo.prototype = new CABLES.Op();
 CABLES.OPS["30a5568b-31da-4504-9525-578ee404993c"]={f:Ops.Array.ArrayModulo,objName:"Ops.Array.ArrayModulo"};
+
+
+
+
+// **************************************************************
+// 
+// Ops.Array.ArraySubtract
+// 
+// **************************************************************
 
 Ops.Array.ArraySubtract = function()
 {
@@ -939,6 +1010,15 @@ inValue.onChange = inArray.onChange = function()
 Ops.Array.ArraySubtract.prototype = new CABLES.Op();
 CABLES.OPS["af78ab59-75d5-4ead-9a8d-27a63e1cbf3f"]={f:Ops.Array.ArraySubtract,objName:"Ops.Array.ArraySubtract"};
 
+
+
+
+// **************************************************************
+// 
+// Ops.Value.Number
+// 
+// **************************************************************
+
 Ops.Value.Number = function()
 {
 CABLES.Op.apply(this,arguments);
@@ -958,6 +1038,15 @@ function exec()
 
 Ops.Value.Number.prototype = new CABLES.Op();
 CABLES.OPS["8fb2bb5d-665a-4d0a-8079-12710ae453be"]={f:Ops.Value.Number,objName:"Ops.Value.Number"};
+
+
+
+
+// **************************************************************
+// 
+// Ops.Math.Divide
+// 
+// **************************************************************
 
 Ops.Math.Divide = function()
 {
@@ -983,6 +1072,15 @@ function exec()
 
 Ops.Math.Divide.prototype = new CABLES.Op();
 CABLES.OPS["86fcfd8c-038d-4b91-9820-a08114f6b7eb"]={f:Ops.Math.Divide,objName:"Ops.Math.Divide"};
+
+
+
+
+// **************************************************************
+// 
+// Ops.Deprecated.Array.ContinuousNumberArray
+// 
+// **************************************************************
 
 Ops.Deprecated.Array.ContinuousNumberArray = function()
 {
@@ -1019,6 +1117,15 @@ function init()
 
 Ops.Deprecated.Array.ContinuousNumberArray.prototype = new CABLES.Op();
 CABLES.OPS["8b9cdeea-f94c-41dc-b743-627115289226"]={f:Ops.Deprecated.Array.ContinuousNumberArray,objName:"Ops.Deprecated.Array.ContinuousNumberArray"};
+
+
+
+
+// **************************************************************
+// 
+// Ops.Math.MapRange
+// 
+// **************************************************************
 
 Ops.Math.MapRange = function()
 {
@@ -1127,6 +1234,15 @@ exec();
 Ops.Math.MapRange.prototype = new CABLES.Op();
 CABLES.OPS["2617b407-60a0-4ff6-b4a7-18136cfa7817"]={f:Ops.Math.MapRange,objName:"Ops.Math.MapRange"};
 
+
+
+
+// **************************************************************
+// 
+// Ops.Gl.Matrix.Scale
+// 
+// **************************************************************
+
 Ops.Gl.Matrix.Scale = function()
 {
 CABLES.Op.apply(this,arguments);
@@ -1163,6 +1279,15 @@ function scaleChanged()
 
 Ops.Gl.Matrix.Scale.prototype = new CABLES.Op();
 CABLES.OPS["50e7f565-0cdb-47ca-912b-87c04e2f00e3"]={f:Ops.Gl.Matrix.Scale,objName:"Ops.Gl.Matrix.Scale"};
+
+
+
+
+// **************************************************************
+// 
+// Ops.Array.ArrayUnpack3
+// 
+// **************************************************************
 
 Ops.Array.ArrayUnpack3 = function()
 {
@@ -1236,6 +1361,15 @@ function update()
 
 Ops.Array.ArrayUnpack3.prototype = new CABLES.Op();
 CABLES.OPS["fa671f66-6957-41e6-ac35-d615b7c29285"]={f:Ops.Array.ArrayUnpack3,objName:"Ops.Array.ArrayUnpack3"};
+
+
+
+
+// **************************************************************
+// 
+// Ops.WebAudio.AudioAnalyzer
+// 
+// **************************************************************
 
 Ops.WebAudio.AudioAnalyzer = function()
 {
@@ -1317,6 +1451,15 @@ refresh.onTriggered = function()
 Ops.WebAudio.AudioAnalyzer.prototype = new CABLES.Op();
 CABLES.OPS["22523fae-a623-401d-b952-a57c26de4b4e"]={f:Ops.WebAudio.AudioAnalyzer,objName:"Ops.WebAudio.AudioAnalyzer"};
 
+
+
+
+// **************************************************************
+// 
+// Ops.WebAudio.Output
+// 
+// **************************************************************
+
 Ops.WebAudio.Output = function()
 {
 CABLES.Op.apply(this,arguments);
@@ -1389,6 +1532,15 @@ op.onMasterVolumeChanged = function(v) {
 Ops.WebAudio.Output.prototype = new CABLES.Op();
 CABLES.OPS["53fdbf4a-bc8d-4c5d-a698-f34fdeb53827"]={f:Ops.WebAudio.Output,objName:"Ops.WebAudio.Output"};
 
+
+
+
+// **************************************************************
+// 
+// Ops.Sequence
+// 
+// **************************************************************
+
 Ops.Sequence = function()
 {
 CABLES.Op.apply(this,arguments);
@@ -1422,6 +1574,15 @@ for(var i=0;i<num;i++)
 
 Ops.Sequence.prototype = new CABLES.Op();
 CABLES.OPS["a466bc1f-06e9-4595-8849-bffb9fe22f99"]={f:Ops.Sequence,objName:"Ops.Sequence"};
+
+
+
+
+// **************************************************************
+// 
+// Ops.Array.RandomNumbersArray3
+// 
+// **************************************************************
 
 Ops.Array.RandomNumbersArray3 = function()
 {
@@ -1495,6 +1656,15 @@ function init()
 
 Ops.Array.RandomNumbersArray3.prototype = new CABLES.Op();
 CABLES.OPS["7f981578-542e-417b-b304-8fbe41258772"]={f:Ops.Array.RandomNumbersArray3,objName:"Ops.Array.RandomNumbersArray3"};
+
+
+
+
+// **************************************************************
+// 
+// Ops.Gl.Matrix.OrbitControls
+// 
+// **************************************************************
 
 Ops.Gl.Matrix.OrbitControls = function()
 {
