@@ -10,50 +10,27 @@
         }
         canvas {
             display: block;
-            position: absolute;
-            z-index: 1;
         }
-        .controls {
-            position: absolute;
-            z-index: 2;
-            left: 50%;
-            bottom: 80px;
-            color: white;
-        }
-    
     </style>
-    <script src="https://kit.fontawesome.com/55e7b3ef6e.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Background -->
     <canvas id="glcanvas" width="100vw" height="100vh"></canvas>
 
-    <!-- Controls -->
-    <div class="controls">
-            <i class="fas fa-backward fa-2x"></i>
-            <i class="fas fa-backward fa-2x"></i>
-            <i class="fas fa-backward fa-2x"></i>
-    </div>
-
     <libs/>
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/lib.js"></script>
-    <script type="text/javascript" src="js/ops.js"></script>
-
+    <script type="text/javascript" src="js/bg.js"></script>
+     
+    
     <script>
         function showError(errId, errMsg) {
             alert('An error occured: ' + errId + ', ' + errMsg);
         }
-
         function patchInitialized() {
         }
-
         function patchFinishedLoading() {
         }
-
         document.addEventListener('DOMContentLoaded', function(event) {
             CABLES.patch = new CABLES.Patch({
-                patchFile: 'js/audio.json',
+                patch: CABLES.exportedPatch,
                 prefixAssetPath: '',
                 glCanvasId: 'glcanvas',
                 glCanvasResizeToWindow: true,
