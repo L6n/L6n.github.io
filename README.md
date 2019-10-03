@@ -1,1 +1,1 @@
-# L6n.github.io
+https://l6n.github.io/
