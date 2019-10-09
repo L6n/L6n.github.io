@@ -6,30 +6,17 @@
     <title>L6n</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/loadingCSS/loading.css">
 </head>
 <body>
+
+    <div class="songLoader">
+        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    
     <canvas id="glcanvas"></canvas>
-    <libs/>
-    <script type="text/javascript" src="js/bgHome.min.js"></script>
-    <script>
-        function showError(errId, errMsg) {
-            alert('An error occured: ' + errId + ', ' + errMsg);
-        }
-        function patchInitialized() {
-        }
-        function patchFinishedLoading() {
-        }
-        document.addEventListener('DOMContentLoaded', function(event) {
-            CABLES.patch = new CABLES.Patch({
-                patch: CABLES.exportedPatch,
-                prefixAssetPath: '',
-                glCanvasId: 'glcanvas',
-                glCanvasResizeToWindow: true,
-                onError: showError,
-                onPatchLoaded: patchInitialized,
-                onFinishedLoading: patchFinishedLoading,
-            });
-        });
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/utilities/bgHome.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
