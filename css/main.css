@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+}
+
+canvas {
+  display: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+/*# sourceMappingURL=main.css.map */

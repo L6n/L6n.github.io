@@ -2,31 +2,21 @@
 <html lang="en">
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149515626-1"></script>
-    <script>
+    <!-- <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'UA-149515626-1');
-    </script>
+    </script> -->
     <meta charset="utf-8">
     <title>L6n</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
-    <style>
-        body { 
-            margin: 0;
-        }
-        canvas {
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <canvas id="glcanvas" width="100vw" height="100vh"></canvas>
-
+    <canvas id="glcanvas"></canvas>
     <libs/>
-    <script type="text/javascript" src="js/bg.js"></script>
-     
-    
+    <script type="text/javascript" src="js/bgHome.min.js"></script>
     <script>
         function showError(errId, errMsg) {
             alert('An error occured: ' + errId + ', ' + errMsg);
