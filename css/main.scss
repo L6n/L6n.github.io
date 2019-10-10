@@ -1,9 +1,10 @@
 // bgHome.js elements created @ z-indexes of 0-101
-body { 
+body {
     margin: 0;
-    width:100vw;
+    width: 100vw;
     height: 100vh;
 }
+
 canvas {
     display: fixed;
     z-index: 1;
