@@ -104,10 +104,10 @@ html.fp-enabled,
     -webkit-transform: translate3d(0,0,0);
 }
 #fp-nav.fp-right {
-    right: 20px;
+    right: 10px;
 }
 #fp-nav.fp-left {
-    left: 20px;
+    left: 10px;
 }
 .fp-slidesNav{
     position: absolute;
@@ -169,9 +169,10 @@ html.fp-enabled,
     height: 4px;
     width: 4px;
     border: 0;
-    background: white;
+    background: #FEFEFA;
     left: 50%;
     top: 50%;
+    opacity: 0.75;
     margin: -2px 0 0 -2px;
     -webkit-transition: all 0.1s ease-in-out;
     -moz-transition: all 0.1s ease-in-out;

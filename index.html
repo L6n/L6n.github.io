@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/fullpage.css">
     <link rel="stylesheet" href="css/loadingCSS/loading.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main/main.css">
 </head>
 
 <body>
@@ -31,16 +31,28 @@
 
 
     <div id="fullpage">
-        <div class="section">Section</div>
-        <div class="section">Section</div>
-        <div class="section">Section</div>
+        <div class="section" id="home">
+            <div class="heading">
+                Hello
+            </div>
+        </div>
+        <div class="section" id="work">
+            <div class="heading">
+                It's me
+            </div>
+        </div>
+        <div class="section" id="about">
+            <div class="heading">
+                I was wondering
+            </div>
+        </div>
     </div>
     <script src="js/utilities/fullpage.js"></script>
     <script type="text/javascript">
         var myFullpage = new fullpage('#fullpage', {
             verticalCentered: false,
             navigation: true,
-            navigationPosition: 'left',
+            navigationPosition: 'right',
             navigationTooltips: ['First page', 'Second page', 'Third and last page'],
             css3: false
         });

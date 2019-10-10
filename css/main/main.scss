@@ -1,0 +1,61 @@
+// bgHome.js elements created @ z-indexes of 0-101
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#glcanvas {
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+}
+
+#fullpage {
+    position: absolute;
+    z-index: 2;
+    animation: fullpageIn 7s forwards;
+    -webkit-animation: fullpageIn 7s forwards;
+}
+
+@keyframes fullpageIn {
+    0% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fullpageIn {
+    0% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: hidden;
+    }
+}
+
+.section {
+    font-family: 'Lato', sans-serif;
+    color: #FEFEFA;
+}
+
+.heading {
+    font-size: 20px;
+    position: relative;
+    top: 50px;
+    left: 50px;
+}

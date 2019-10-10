@@ -39,7 +39,6 @@
   border-radius: 50%;
   background: #FEFEFA;
   margin: -3px 0 0 -3px;
-  opacity: 0.75;
   animation: rollerFade 6s forwards;
   -webkit-animation: rollerFade 6s forwards;
 }
@@ -153,6 +152,9 @@
   90% {
     opacity: 1;
   }
+  99% {
+    opacity: 0;
+  }
   100% {
     opacity: 0;
     visibility: hidden;
@@ -166,6 +168,9 @@
   90% {
     opacity: 1;
   }
+  99% {
+    opacity: 0;
+  }
   100% {
     opacity: 0;
     visibility: hidden;
@@ -174,10 +179,13 @@
 
 @keyframes rollerFade {
   0% {
-    opacity: 0.75;
+    opacity: 1;
   }
   90% {
-    opacity: 0.75;
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
   }
   100% {
     opacity: 0;
@@ -187,10 +195,13 @@
 
 @-webkit-keyframes rollerFade {
   0% {
-    opacity: 0.75;
+    opacity: 1;
   }
   90% {
-    opacity: 0.75;
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
   }
   100% {
     opacity: 0;
