@@ -1,6 +1,6 @@
 .songLoader {
   position: fixed;
-  z-index: 102;
+  z-index: 1000;
   width: 100vw;
   height: 100vh;
   background-color: #25282D;
@@ -13,7 +13,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-animation: cssAnimation 0s ease-out 5s forwards;
+  animation: loaderFade 7s forwards;
+  -webkit-animation: loaderFade 7s forwards;
 }
 
 .lds-roller {
@@ -38,6 +39,9 @@
   border-radius: 50%;
   background: #FEFEFA;
   margin: -3px 0 0 -3px;
+  opacity: 0.75;
+  animation: rollerFade 6s forwards;
+  -webkit-animation: rollerFade 6s forwards;
 }
 
 .lds-roller div:nth-child(1) {
@@ -142,7 +146,7 @@
   }
 }
 
-@keyframes cssAnimation {
+@keyframes loaderFade {
   0% {
     opacity: 1;
   }
@@ -151,13 +155,11 @@
   }
   100% {
     opacity: 0;
-    width: 0;
-    height: 0;
-    overflow: hidden;
+    visibility: hidden;
   }
 }
 
-@-webkit-keyframes cssAnimation {
+@-webkit-keyframes loaderFade {
   0% {
     opacity: 1;
   }
@@ -166,9 +168,33 @@
   }
   100% {
     opacity: 0;
-    width: 0;
-    height: 0;
-    overflow: hidden;
+    visibility: hidden;
+  }
+}
+
+@keyframes rollerFade {
+  0% {
+    opacity: 0.75;
+  }
+  90% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes rollerFade {
+  0% {
+    opacity: 0.75;
+  }
+  90% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 /*# sourceMappingURL=loading.css.map */
