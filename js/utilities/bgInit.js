@@ -1,11 +1,14 @@
 function showError(errId, errMsg) {
-    alert('An error occured: ' + errId + ', ' + errMsg)
+    alert('An error occured: ' + errId + ', ' + errMsg);
 }
 
-function patchInitialized() {}
+function patchInitialized() {
+}
 
-function patchFinishedLoading() {}
-document.addEventListener('DOMContentLoaded', function (event) {
+function patchFinishedLoading() {
+}
+
+document.addEventListener('DOMContentLoaded', function(event) {
     CABLES.patch = new CABLES.Patch({
         patch: CABLES.exportedPatch,
         prefixAssetPath: '',
@@ -14,5 +17,5 @@ document.addEventListener('DOMContentLoaded', function (event) {
         onError: showError,
         onPatchLoaded: patchInitialized,
         onFinishedLoading: patchFinishedLoading,
-    })
+    });
 });
