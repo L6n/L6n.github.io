@@ -14,7 +14,9 @@
 </head>
 
 <body>
-    <div class="songLoader">
+
+    <!-- Loading Overlay -->
+    <div class="loadOverlay">
         <div class="lds-roller">
             <div></div>
             <div></div>
@@ -27,18 +29,38 @@
         </div>
     </div>
 
+    <!-- Background Patch -->
     <canvas id="glcanvas"></canvas>
     <script type="text/javascript" src="js/utilities/bgInit.js"></script>
     <script type="text/javascript" src="js/utilities/bgPatch.js"></script>
 
-
+    <!-- FullpageJS -->
     <div id="fullpage">
         <div class="sideBar">
             <div class="row d-flex flex-column" id="navGrid">
-                <div class="col">col</div>
-                <div class="col">col</div>
-                <div class="col">col</div>
-                <div class="col">col</div>
+                <div class="col d-flex flex-column justify-content-start px-0">
+                    <p>LOGO/ICON</p>
+                    <p>(links to landing page)</p>
+                </div>
+                <div class="col d-flex flex-column justify-content-start px-0">
+                    <p>PAGE1</p>
+                    <p>subcontent</p>
+                    <p>subcontent</p>
+                </div>
+                <div class="col d-flex flex-column justify-content-start px-0">
+                    <p>PAGE2</p>
+                    <p>subcontent</p>
+                    <p>subcontent</p>
+                </div>
+                <div class="col d-flex flex-column justify-content-start px-0">
+                    <p>PAGE3</p>
+                    <p>subcontent</p>
+                    <p>subcontent</p>
+                </div>
+                <div class="col d-flex flex-column justify-content-end px-0">
+                    <p>CONTACT</p>
+                    <p>ICONS</p>
+                </div>
             </div>
         </div>
         <div class="container-fluid">
@@ -51,13 +73,19 @@
                 </div>
             </div>
             <div class="section" id="work">
-                <div class="heading">
-                    It's me
+                <div class="row d-flex flex-column" id="fullPageGrid">
+                    <div class="col">col</div>
+                    <div class="col">col</div>
+                    <div class="col">col</div>
+                    <div class="col">col</div>
                 </div>
             </div>
             <div class="section" id="about">
-                <div class="heading">
-                    I was wondering
+                <div class="row d-flex flex-column" id="fullPageGrid">
+                    <div class="col">col</div>
+                    <div class="col">col</div>
+                    <div class="col">col</div>
+                    <div class="col">col</div>
                 </div>
             </div>
         </div>
@@ -65,7 +93,7 @@
     <script src="js/utilities/fullpage.js"></script>
     <script type="text/javascript">
         var myFullpage = new fullpage('#fullpage', {
-            verticalCentered: false,
+            verticalCentered: true,
             navigation: true,
             navigationPosition: 'right',
             navigationTooltips: ['First page', 'Second page', 'Third and last page'],

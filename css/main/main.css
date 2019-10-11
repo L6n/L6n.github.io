@@ -51,23 +51,26 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
   bottom: 0;
   width: 200px;
-  border: solid;
+  color: #FEFEFA;
+  border-right: 1px solid;
   border-color: blue;
   z-index: 100
 }
 
 #navGrid {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  border: solid;
-  padding-left: 30px;
+  position: absolute;
+  padding-left: 40px;
+  padding-right: 10px;
   padding-top: 30px;
   padding-bottom: 30px;
-  padding-right: 30px;
+  height: 100%;
+  width: 100%;
+  /* padding-left: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 30px; */
 }
 
 .section {
@@ -77,8 +80,8 @@ body {
 
 #fullPageGrid {
   height: 100vh;
-  border: solid;
-  border-color: yellow;
+  /* border: solid; */
+  /* border-color: yellow; */
   padding-left: 230px;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -86,7 +89,7 @@ body {
 }
 
 .col {
-  border: solid;
+  border: 1px solid;
   border-color: red;
 }
 
