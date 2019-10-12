@@ -55,7 +55,7 @@ body {
   width: 200px;
   color: #FEFEFA;
   border-right: 1px solid;
-  border-color: blue;
+  border-color: #FEFEFA;
   z-index: 100
 }
 
@@ -89,8 +89,21 @@ body {
 }
 
 .col {
-  border: 1px solid;
+  border: 1px dashed;
   border-color: red;
+}
+.col-sm-4, .col-sm-3 {
+  border: 1px dashed;
+  border-color: red;
+}
+
+.top-buffer { margin-top: 80px; }
+
+#page {
+  margin-left: 265px;
+  border: 1px dashed;
+  border-color: red;
+  margin-top: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */
