@@ -9,8 +9,8 @@ html.fp-enabled,
 }
 .fp-section {
     position: relative;
-    -webkit-box-sizing: border-box; /* Safari<=5 Android<=3 */
-    -moz-box-sizing: border-box; /* <=28 */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 .fp-slide {
@@ -95,7 +95,7 @@ html.fp-enabled,
     -webkit-transform: translate3d(0,0,0);
 }
 #fp-nav.fp-right {
-    right: 30px;
+    right: 25px;
 }
 #fp-nav.fp-left {
     left: 20px;

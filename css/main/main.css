@@ -61,49 +61,36 @@ body {
 
 #navGrid {
   position: absolute;
-  padding-left: 40px;
-  padding-right: 10px;
+  padding-left: 45px;
+  padding-right: 15px;
   padding-top: 30px;
   padding-bottom: 30px;
   height: 100%;
   width: 100%;
-  /* padding-left: 30px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-right: 30px; */
 }
 
 .section {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   font-family: 'Lato', sans-serif;
   color: #FEFEFA;
 }
 
-#fullPageGrid {
-  height: 100vh;
-  /* border: solid; */
-  /* border-color: yellow; */
-  padding-left: 230px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-right: 30px;
+.page {
+  margin-left: 245px;
+  height: calc(100% - 60px);
+  margin-right: 65px;
+  border: 1px dashed;
+  border-color: blue;
 }
 
 .col {
   border: 1px dashed;
   border-color: red;
-}
-.col-sm-4, .col-sm-3 {
-  border: 1px dashed;
-  border-color: red;
-}
-
-.top-buffer { margin-top: 80px; }
-
-#page {
-  margin-left: 265px;
-  border: 1px dashed;
-  border-color: red;
-  margin-top: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */
