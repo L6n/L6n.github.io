@@ -2,6 +2,13 @@ body {
   margin: 0;
   width: 100vw;
   height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  color: #FEFEFA;
+}
+
+a {
+  color: #FEFEFA;
+  opacity: 0.75;
 }
 
 #glcanvas {
@@ -76,21 +83,41 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  font-family: 'Lato', sans-serif;
-  color: #FEFEFA;
 }
 
 .page {
   margin-left: 245px;
   height: calc(100% - 60px);
   margin-right: 65px;
-  border: 1px dashed;
-  border-color: blue;
+  /* border: 1px dashed;
+  border-color: blue; */
 }
 
-.col {
+/* .col {
   border: 1px dashed;
   border-color: red;
+} */
+
+@media only screen and (max-width: 800px) {
+  .sideBar {
+    width: 130px !important;
+  }
+
+  .page {
+    margin-left: 145px;
+  }
+}
+
+@media only screen and (max-height: 400px) {
+  .empty {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-height: 320px) {
+  .logo {
+    display: none !important;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

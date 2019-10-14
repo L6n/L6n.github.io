@@ -3,15 +3,17 @@
 
 <head>
     <meta charset="utf-8">
-    <title>L6n</title>
+    <title>Hello</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
     <link rel="icon" href="assets/waving-hand.png">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/utilities/fullpage.css">
     <link rel="stylesheet" href="css/utilities/loading.css">
     <link rel="stylesheet" href="css/main/main.css">
+    <script src="https://kit.fontawesome.com/55e7b3ef6e.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -39,44 +41,42 @@
     <div id="fullpage">
         <div class="sideBar">
             <div class="row d-flex flex-column" id="navGrid">
-                <div class="col d-flex flex-column justify-content-start px-0">
-                    <p>LOGO (0)</p>
+                <div class="col d-flex flex-column justify-content-start pl-0 logo">
+                    <a href="#landingpage">Logo</a>
                 </div>
-                <div class="col d-flex flex-column justify-content-start px-0">
-                    <p>PAGE (1)</p>
-                    <p>PAGE (2)</p>
-                    <p>PAGE (3)</p>
+                <div class="col d-flex flex-column justify-content-start pl-0 empty">
                 </div>
-                <div class="col d-flex flex-column justify-content-start px-0">
-
+                <div class="col d-flex flex-column justify-content-center pl-0 pageLinks">
+                    <a href="#work">Work</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
                 </div>
-                <div class="col d-flex flex-column justify-content-end px-0">
-                    <p>CONTACT</p>
+                <div class="col d-flex flex-column justify-content-end pl-0 empty">
                 </div>
-                <div class="col d-flex flex-column justify-content-end px-0">
-                    <p>ICONS</p>
+                <div class="col d-flex flex-column justify-content-end pl-0 icons">
+                    <i class="fab fa-linkedin"></i>
                 </div>
             </div>
         </div>
         <div class="container-fluid">
-            <div class="section">
+            <div class="section" data-anchor="landingpage">
                 <div class="page">
-                    <h1>Landing Page (0)</h1>
+                    <h1>Landing Page</h1>
                 </div>
             </div>
-            <div class="section">
+            <div class="section" data-anchor="work">
                 <div class="page">
-                    <h1>Page (1)</h1>
+                    <h1>Work</h1>
                 </div>
             </div>
-            <div class="section">
+            <div class="section" data-anchor="about">
                 <div class="page">
-                    <h1>Page (2)</h1>
+                    <h1>About</h1>
                 </div>
             </div>
-            <div class="section">
+            <div class="section" data-anchor="contact">
                 <div class="page">
-                    <h1>Page (3)</h1>
+                    <h1>Contact</h1>
                 </div>
             </div>
         </div>
