@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
     <link rel="icon" href="assets/waving-hand.png">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/utilities/fullpage.css">
+    <link rel="stylesheet" href="css/utilities/story-telling.css">
     <link rel="stylesheet" href="css/utilities/loading.css">
     <link rel="stylesheet" href="css/main/main.css">
+
     <script src="https://kit.fontawesome.com/55e7b3ef6e.js" crossorigin="anonymous"></script>
 
 </head>
@@ -38,56 +38,48 @@
     <script type="text/javascript" src="js/utilities/bgPatch.js"></script>
 
     <!-- FullpageJS -->
+
+    <ul id="menu">
+        <li data-menuanchor="hello" class="active"><a href="#hello">Hello</a></li>
+        <li data-menuanchor="work"><a href="#work">Work</a></li>
+        <li data-menuanchor="about"><a href="#about">About</a></li>
+        <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
+    </ul>
+
     <div id="fullpage">
-        <div class="sideBar">
-            <div class="row d-flex flex-column" id="navGrid">
-                <div class="col d-flex flex-column justify-content-start pl-0 logo">
-                    <a href="#landingpage">Logo</a>
-                </div>
-                <div class="col d-flex flex-column justify-content-start pl-0 empty">
-                </div>
-                <div class="col d-flex flex-column justify-content-center pl-0 pageLinks">
-                    <a href="#work">Work</a>
-                    <a href="#about">About</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="col d-flex flex-column justify-content-end pl-0 empty">
-                </div>
-                <div class="col d-flex flex-column justify-content-end pl-0 icons">
-                    <i class="fab fa-linkedin"></i>
-                </div>
+        <div class="section" id="section0">
+            <div class="page">
+                <h1>Hello</h1>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="section" data-anchor="landingpage">
-                <div class="page">
-                    <h1>Landing Page</h1>
-                </div>
+        <div class="section" id="section1">
+            <div class="page">
+                <h1 id="full-width">Work</h1>
             </div>
-            <div class="section" data-anchor="work">
-                <div class="page">
-                    <h1>Work</h1>
-                </div>
+        </div>
+        <div class="section" id="section2">
+            <div class="page">
+                <h1>About</h1>
             </div>
-            <div class="section" data-anchor="about">
-                <div class="page">
-                    <h1>About</h1>
-                </div>
-            </div>
-            <div class="section" data-anchor="contact">
-                <div class="page">
-                    <h1>Contact</h1>
-                </div>
+        </div>
+        <div class="section" id="section3">
+            <div class="page">
+                <h1>Contact</h1>
             </div>
         </div>
     </div>
-    <script src="js/utilities/fullpage.js"></script>
+    <script src="js/utilities/fullpage.extensions.min.js"></script>
     <script type="text/javascript">
         var myFullpage = new fullpage('#fullpage', {
-            verticalCentered: true,
+            menu: '#menu',
+            anchors: ['hello', 'work', 'about', 'contact'],
             navigation: true,
-            navigationPosition: 'right',
-            css3: false
+            navigationPosition: 'left',
+            navigationTooltips: ['Hello', 'Work', 'About', 'Contact'],
+            showActiveTooltip: true,
+            verticalCentered: true,
+            autoScrolling: true,
+            css3: false,
         });
     </script>
 
@@ -96,9 +88,6 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script>
 </body>
 
