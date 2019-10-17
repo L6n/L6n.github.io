@@ -7176,7 +7176,7 @@ var CABLES;
         },
         portsIn: [{
             name: "css code",
-            value: ".title\n{\n    height: 20px;\n    bottom: 120px;\n    width: 100px;\n    right: 20px;\n    text-align: center;\n}\n.songCard\n{\n    height: 100px;\n    width: 100px;\n    bottom: 30px;\n    right: 30px;\n    opacity: 0.75;\n    border-radius: 10px;\n}\n.back3\n{\n    width:  20px;\n    height: 20px;\n    right: 105px;\n    bottom: 35px;\n    opacity: 0.75;\n}\n.reset3\n{\n    width:  20px;\n    height: 20px;\n    right: 70px;\n    bottom: 35px;\n    opacity: 0.75;\n}\n.next3\n{\n    width:  20px;\n    height: 20px;\n    right: 35px;\n    bottom: 35px;\n    opacity: 0.75;\n}\n.hover\n{\n    opacity: 1;\n}\n.clicked\n{\n    opacity: 0.75;\n}"
+            value: ".title\n{\n    height: 20px;\n    bottom: 120px;\n    width: 100px;\n    right: 20px;\n    text-align: center;\n}\n.songCard\n{\n    height: 100px;\n    width: 100px;\n    bottom: 50px;\n    right: 50px;\n    opacity: 0.75;\n    border-radius: 10px;\n}\n.back3\n{\n    width:  20px;\n    height: 20px;\n    right: 125px;\n    bottom: 55px;\n    opacity: 0.75;\n}\n.reset3\n{\n    width:  20px;\n    height: 20px;\n    right: 90px;\n    bottom: 55px;\n    opacity: 0.75;\n}\n.next3\n{\n    width:  20px;\n    height: 20px;\n    right: 55px;\n    bottom: 55px;\n    opacity: 0.75;\n}\n.hover\n{\n    opacity: 1;\n}\n.clicked\n{\n    opacity: 0.75;\n}"
         }],
         portsOut: []
     }, {
