@@ -57,7 +57,7 @@ ul {
 
 .menu-bottomleft-container {
   position: fixed;
-  bottom: 40px;
+  bottom: 38px;
   left: 40px;
   z-index: 100;
   right: 25%;
