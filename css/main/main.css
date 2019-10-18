@@ -36,7 +36,7 @@ ul {
   top: 40px;
   right: 40px;
   z-index: 100;
-  left: 50%;
+  left: 25%;
   padding: 0;
   margin: 0;
   /* border: solid yellow 1px; */
@@ -48,7 +48,19 @@ ul {
   top: 40px;
   left: 40px;
   z-index: 100;
-  right: 50%;
+  right: 25%;
+  padding: 0;
+  margin: 0;
+  /* border: solid yellow 1px; */
+  display: inline;
+}
+
+.menu-bottomleft-container {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  z-index: 100;
+  right: 25%;
   padding: 0;
   margin: 0;
   /* border: solid yellow 1px; */
@@ -67,24 +79,43 @@ ul {
   margin: 0px;
 }
 
+.menu-bottomleft {
+  float: left;
+  padding: 0px;
+  margin: 0px;
+}
+
 .menu-left li {
   display: inline;
-  font-size: 14px;
+  font-size: 16px;
   color: #FEFEFA;
   opacity: 0.5;
-  padding-right: 18px;
+  padding-right: 16px;
   padding-top: 0px;
   transition: all 0.4s ease-in-out;
 }
 
 .menu-right li {
   display: inline;
-  font-size: 14px;
+  font-size: 16px;
   color: #FEFEFA;
   opacity: 0.5;
-  padding-left: 18px;
+  padding-left: 16px;
   padding-top: 0px;
   transition: all 0.4s ease-in-out;
+}
+
+.menu-bottomleft li {
+  display: inline;
+  font-size: 22px;
+  color: #FEFEFA;
+  opacity: 0.5;
+  padding-right: 15px;
+  transition: all 0.4s ease-in-out;
+}
+
+.menu-bottomleft li:hover {
+  opacity: 1.0;
 }
 
 #menu li.active {
