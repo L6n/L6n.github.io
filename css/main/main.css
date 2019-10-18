@@ -87,20 +87,20 @@ ul {
 
 .menu-left li {
   display: inline;
-  font-size: 16px;
+  font-size: 14px;
   color: #FEFEFA;
   opacity: 0.5;
-  padding-right: 16px;
+  padding-right: 14px;
   padding-top: 0px;
   transition: all 0.4s ease-in-out;
 }
 
 .menu-right li {
   display: inline;
-  font-size: 16px;
+  font-size: 14px;
   color: #FEFEFA;
   opacity: 0.5;
-  padding-left: 16px;
+  padding-left: 14px;
   padding-top: 0px;
   transition: all 0.4s ease-in-out;
 }
