@@ -1,8 +1,7 @@
 body {
   margin: 0;
   width: 100vw;
-  /* min-height: -webkit-fill-available; */
-  font-family: 'Montserrat', sans-serif;
+  height: 100vh;
   font-weight: 400;
   color: #FEFEFA;
 }
