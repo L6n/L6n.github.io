@@ -93,15 +93,21 @@
         var myFullpage = new fullpage('#fullpage', {
             menu: '#menu',
             anchors: ['hello', 'work', 'about', 'contact'],
+            verticalCentered: true,
             // navigation: true,
             // navigationPosition: 'left',
             // navigationTooltips: ['Hello', 'Work', 'About', 'Contact'],
             // showActiveTooltip: true,
-            verticalCentered: true,
             // autoScrolling: true, (IOS ATTEMPTS HERE)
             // responsiveHeight: 900,
             // afterResponsive: function (isResponsive) {},
             css3: false,
+        });
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        window.addEventListener('resize', () => {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
         });
     </script>
 

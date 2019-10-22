@@ -2,6 +2,7 @@ body {
   margin: 0;
   width: 100vw;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   color: #FEFEFA;
@@ -12,6 +13,7 @@ body {
   z-index: 1;
   width: 100vw;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 #fullpage {
