@@ -159,8 +159,7 @@ ul {
 .section {
   display: flex;
   position: relative;
-  /* border-color: yellow;
-  border-style: dashed; */
+  /* border: solid yellow 1px; */
 }
 
 .page {
@@ -168,14 +167,39 @@ ul {
   height: calc(100% - 100px);
   margin-right: 50px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   flex-wrap: wrap;
-  align-content: center;
   /* border: 1px dashed blue; */
 }
 
 h1 {
-  margin: auto;
-  /* border: 1px dashed blue; */
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+h2 {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+h3 {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+p {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+p a {
+  opacity: 0.5;
+  transition: all 0.4s ease-in-out;
+}
+
+p a:hover {
+  opacity: 1;
 }
 
 #section0 {
