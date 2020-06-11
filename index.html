@@ -23,6 +23,23 @@
     <link rel="stylesheet" href="css/utilities/loading.css">
     <link rel="stylesheet" href="css/main/main.css">
     <script src="https://kit.fontawesome.com/55e7b3ef6e.js" crossorigin="anonymous"></script>
+    <style type="text/css">
+        .mobileHide { display: inline;}
+        /* Smartphone Portrait and Landscape */
+        @media only screen
+        and (min-device-width : 320px)
+        and (max-device-width : 480px){  .mobileHide { display: none;}}
+     </style>
+     <style type="text/css">
+        .mobileShow {display: none;}
+      
+        /* Smartphone Portrait and Landscape */
+        @media only screen
+          and (min-device-width : 320px)
+          and (max-device-width : 480px){ 
+            .mobileShow {display: inline;}
+        }
+      </style>
 </head>
 
 <body>
@@ -69,27 +86,42 @@
     <div id="fullpage">
         <div class="section" id="section0">
             <div class="page">
-                <h1>Hello</h1>
+                <h2>My name is Logan Mies.</h2>
                 <p>You've found my personal site.</p>
                 <p>Explore a bit (play some music), relax, and get to know me.</p>
             </div>
         </div>
         <div class="section" id="section1">
             <div class="page">
-                <h1 id="full-width">Work</h1>
-                <p>Check <a href="https://github.com/L6n" target="_blank">GitHub</a>, and/or check back here later.</p>
+                <h2>Check <a href="https://github.com/L6n" target="_blank">GitHub</a>.</h2>
+                <p>And/or check back here later.</p>
             </div>
         </div>
         <div class="section" id="section2">
             <div class="page">
-                <h1>About</h1>
-                <p>Coming soon...</p>
+                <h2 class="mobileHide">My background is long/complicated, but have at it below.</h2>
+                <ul class="mobileHide" id="list">
+                    <li>BS Mechanical Engineering (Thermal-fluid) <a href="https://www.wpi.edu/" target="_blank">@ Worcester Polytechnic Institute (WPI)</a>: 2014-2018</li>
+                    <li>MS Data Science <a href="https://www.wpi.edu/" target="_blank">@ WPI</a>: 2018-2020</li>
+                    <li>MS Computer Science (current) <a href="https://www.cc.gatech.edu/" target="_blank">@ Georgia Tech</a>: 2020-<i>Current</i></li>
+                </ul>
+                <ul class="mobileHide" id="list">
+                    <li>Venture Capital & Private Equity <a href="https://www.lamppostgroup.com/" target="_blank">@ Lamp Post Group</a>: 2014</li>
+                    <li>Product Development <a href="https://www.kickstarter.com/projects/mytorch/torch-a-simple-router-for-digital-parenting" target="_blank">@ Torch</a>: 2015</li>
+                    <li>Corporate Social Responsibility <a href="https://www.doikham.co.th/en/" target="_blank">@ Doikham Food Products</a>: 2017</li>
+                    <li>Innovation & Entreprenuership @ <a href="https://www.commerce.gov/" target="_blank">@ U.S. Department of Commerce</a>: 2017</li>
+                    <li>Process Research & Development Engineer <a href="https://www.oceanspray.com/" target="_blank">@ Ocean Spray</a>: 2017-2018</li>
+                    <li>Deployment Engineer (Project Management) <a href="https://www.amazonrobotics.com/#/" target="_blank">@ Amazon Robotics</a>: 2018-2019</li>
+                    <li>(Big) Food/Bev Engineering Consultant <a href="https://www.dennisgroup.com/" target="_blank">@ Dennis Group</a>: 2019-<i>Current</i></li>
+                </ul>
+                <p class="mobileHide">Current interests are general development, data science, and (low-key OCD about) clean design/flows.</p>
+                <h2 class="mobileShow">My background is long/complicated.</h2>
+                <p class="mobileShow">Since you're on mobile, check out my <a href="https://www.linkedin.com/in/loganmies/" target="_blank">LinkedIn</a>.</p>
             </div>
         </div>
         <div class="section" id="section3">
             <div class="page">
-                <h1>Contact</h1>
-                <p>loganmies@gmail.com</p>
+                <p><a href="mailto:loganmies@gmail.com">loganmies@gmail.com</a></p>
             </div>
         </div>
     </div>

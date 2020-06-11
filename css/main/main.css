@@ -183,7 +183,21 @@ h2 {
   margin-right: 40px;
 }
 
+h2 a {
+  opacity: 0.5;
+  transition: all 0.4s ease-in-out;
+}
+
+h2 a:hover {
+  opacity: 1;
+}
+
 h3 {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+h4 {
   margin-left: 40px;
   margin-right: 40px;
 }
@@ -247,5 +261,24 @@ p a:hover {
 }
 
 #section3.active {
+  opacity: 1;
+}
+
+#list {
+  list-style: circle;
+  margin-left: 66px;
+  margin-right: 40px;
+}
+
+#list * {
+  padding-bottom: 10px;
+}
+
+.page a {
+  opacity: 0.5;
+  transition: all 0.4s ease-in-out;
+}
+
+.page a:hover {
   opacity: 1;
 }
