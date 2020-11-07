@@ -45,6 +45,7 @@
 <body>
 
     <!-- Loading Overlay -->
+
     <div class="loadOverlay">
         <div class="lds-roller">
             <div></div>
@@ -59,22 +60,26 @@
     </div>
 
     <!-- Background Patch -->
+
     <canvas id="glcanvas"></canvas>
     <script type="text/javascript" src="js/utilities/bg.min.js"></script>
 
     <!-- FullpageJS -->
+
     <div class="menu-left-container">
         <ul class="menu-left" id="menu">
             <li data-menuanchor="hello" class="active"><a href="#hello">Hello</a></li>
         </ul>
     </div>
+
     <div class="menu-right-container">
         <ul class="menu-right" id="menu">
-            <li data-menuanchor="work"><a href="#work">Work</a></li>
             <li data-menuanchor="about"><a href="#about">About</a></li>
+            <li data-menuanchor="works"><a href="#works">Works</a></li>
             <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
         </ul>
     </div>
+
     <div class="menu-bottomleft-container">
         <ul class="menu-bottomleft">
             <li><a href="https://github.com/L6n" target="_blank"><i class="fab fa-github"></i></a></li>
@@ -83,7 +88,9 @@
                         class="fab fa-spotify"></i></a></li>
         </ul>
     </div>
+
     <div id="fullpage">
+
         <div class="section" id="section0">
             <div class="page">
                 <h2>My name is Logan Mies.</h2>
@@ -91,13 +98,8 @@
                 <p>Explore a bit (play some music), relax, and get to know me.</p>
             </div>
         </div>
+
         <div class="section" id="section1">
-            <div class="page">
-                <h2>Check <a href="https://github.com/L6n" target="_blank">GitHub</a>.</h2>
-                <p>And/or check back here later.</p>
-            </div>
-        </div>
-        <div class="section" id="section2">
             <div class="page">
                 <h2 class="mobileHide">My background is long & complicated, but have at it below.</h2>
                 <ul class="mobileHide" id="list">
@@ -119,17 +121,26 @@
                 <p class="mobileShow">Since you're on mobile, check out my <a href="https://www.linkedin.com/in/loganmies/" target="_blank">LinkedIn</a>.</p>
             </div>
         </div>
+
+        <div class="section" id="section2">
+            <div class="page">
+                <h2>Check <a href="https://github.com/L6n" target="_blank">GitHub</a>.</h2>
+                <p>And/or check back here later.</p>
+            </div>
+        </div>
+
         <div class="section" id="section3">
             <div class="page">
                 <p><a href="mailto:loganmies@gmail.com">loganmies@gmail.com</a></p>
             </div>
         </div>
     </div>
+
     <script src="js/utilities/fullpage.extensions.min.js"></script>
     <script type="text/javascript">
         var myFullpage = new fullpage('#fullpage', {
             menu: '#menu',
-            anchors: ['hello', 'work', 'about', 'contact'],
+            anchors: ['hello', 'about', 'works', 'contact'],
             verticalCentered: true,
             autoScrolling: true,
             css3: false,
