@@ -17,8 +17,8 @@ body {
 #fullpage {
   position: absolute;
   z-index: 2;
-  animation: fullpageIn 7s forwards;
-  -webkit-animation: fullpageIn 7s forwards;
+  animation: fullpageIn 3.5s forwards;
+  -webkit-animation: fullpageIn 3.5s forwards;
 }
 
 a {
