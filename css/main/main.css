@@ -159,7 +159,6 @@ ul {
 .section {
   display: flex;
   position: relative;
-  /* border: solid yellow 1px; */
 }
 
 .page {
@@ -170,7 +169,6 @@ ul {
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
-  /* border: 1px dashed blue; */
 }
 
 h1 {
