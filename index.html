@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -6,7 +7,6 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149515626-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
         function gtag() {
             dataLayer.push(arguments);
         }
@@ -14,26 +14,27 @@
 
         gtag('config', 'UA-149515626-1');
     </script>
+
+    <!-- General HTML Info -->
     <meta charset="utf-8">
-    <title>L6n</title>
+    <title>Logan Mies</title>
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
-    <link rel="icon" href="assets/waving-hand.png">
+    <link rel="icon" href="assets/Fav.png">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/utilities/fullpage.css">
     <link rel="stylesheet" href="css/utilities/loading.css">
     <link rel="stylesheet" href="css/main/main.css">
     <script src="https://kit.fontawesome.com/55e7b3ef6e.js" crossorigin="anonymous"></script>
+
+    <!-- Mobile Hide Functionality -->
     <style type="text/css">
         .mobileHide { display: inline;}
-        /* Smartphone Portrait and Landscape */
         @media only screen
         and (min-device-width : 320px)
         and (max-device-width : 480px){  .mobileHide { display: none;}}
      </style>
      <style type="text/css">
         .mobileShow {display: none;}
-      
-        /* Smartphone Portrait and Landscape */
         @media only screen
           and (min-device-width : 320px)
           and (max-device-width : 480px){ 
@@ -43,9 +44,7 @@
 </head>
 
 <body>
-
     <!-- Loading Overlay -->
-
     <div class="loadOverlay">
         <div class="lds-roller">
             <div></div>
@@ -60,18 +59,15 @@
     </div>
 
     <!-- Background Patch -->
-
     <canvas id="glcanvas"></canvas>
-    <script type="text/javascript" src="js/utilities/bg.min.js"></script>
+    <script type="text/javascript" src="js/utilities/background.min.js"></script>
 
-    <!-- FullpageJS -->
-
+    <!-- FullpageJS Menus -->
     <div class="menu-left-container">
         <ul class="menu-left" id="menu">
             <li data-menuanchor="hello" class="active"><a href="#hello">Hello</a></li>
         </ul>
     </div>
-
     <div class="menu-right-container">
         <ul class="menu-right" id="menu">
             <li data-menuanchor="about"><a href="#about">About</a></li>
@@ -79,7 +75,6 @@
             <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
         </ul>
     </div>
-
     <div class="menu-bottomleft-container">
         <ul class="menu-bottomleft">
             <li><a href="https://github.com/L6n" target="_blank"><i class="fab fa-github"></i></a></li>
@@ -89,8 +84,8 @@
         </ul>
     </div>
 
+    <!-- FullpageJS Main -->
     <div id="fullpage">
-
         <div class="section" id="section0">
             <div class="page">
                 <h2>My name is Logan Mies</h2>
@@ -133,7 +128,6 @@
                 <p><a href="https://drive.google.com/file/d/0By_SW19c1BfhSVFzNHc0SjduNzg/view" target="_blank" class="mobileHide">Kalman & Bayesian Filters in Python (R. Labbel)</a></p>
                 <p><a href="http://www.ethlife.ethz.ch/archive_articles/091008_kalman_per/index_EN.html" target="_blank" class="mobileHide">R. Kalman National Medal of Science (B. Obama)</a></p>
             </div>
-    
             <div class="slide" id="slide2" data-anchor="slide2">
                 <h3>Particle Filters</h3>
                 <img src="/assets/particle_filter_mars_A.gif" alt="" class="responsive">
@@ -144,7 +138,6 @@
                 <p><a href="https://www.youtube.com/watch?v=aUkBa1zMKv4" target="_blank" class="mobileHide">"This is how every algorithm should be taught!" (A. Svensson)</a></p>
                 <p><a href="http://www.cim.mcgill.ca/~yiannis/particletutorial.pdf" target="_blank" class="mobileHide">Particle Math (I. Rekleitis)</a></p>
             </div>
-            
             <div class="slide" id="slide3" data-anchor="slide3">
                 <h3>SLAM (Active Graph & Particles)</h3>
                 <img src="/assets/SLAM.gif" alt="" class="responsive"><br><br class="mobileHide">
@@ -153,7 +146,6 @@
                 <p><a href="https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping" target="_blank" class="mobileHide">Simultaneous Localization and Mapping (Wiki)</a></p>
                 <p><a href="https://ai.stanford.edu/~koller/Papers/Montemerlo+al:AAAI02.pdf" target="_blank" class="mobileHide">FastSLAM (Stanford and Carengie Mellon)</a></p>
             </div>     
-    
             <div class="slide" id="slide4" data-anchor="slide4">
                 <h3>PID Control</h3>
                 <img src="/assets/PID_RocketPID_Normal.png" alt="" class="responsive">
@@ -165,9 +157,7 @@
                 <p><a href="https://arxiv.org/pdf/1602.04450.pdf" target="_blank" class="mobileHide">Bayesian Parameter Optimization (F. Berkenkamp)</a></p>
                 <p><a href="https://en.wikipedia.org/wiki/Integral_windup" target="_blank" class="mobileHide">Integral Windup (Wiki)</a></p>
             </div>	
-
         </div>
-
         <div class="section" id="section3">
             <div class="page">
                 <p><a href="mailto:loganmies@gmail.com">loganmies@gmail.com</a></p>
@@ -175,12 +165,12 @@
         </div>
     </div>
 
+    <!-- JS Connections -->
     <script src="js/utilities/fullpage.extensions.min.js"></script>
     <script type="text/javascript">
         var myFullpage = new fullpage('#fullpage', {
             menu: '#menu',
             anchors: ['hello', 'about', 'works', 'contact'],
-            // slidesNavigation: true,
             verticalCentered: true,
             autoScrolling: true,
             css3: false,
@@ -188,5 +178,4 @@
     </script>
 
 </body>
-
 </html>
