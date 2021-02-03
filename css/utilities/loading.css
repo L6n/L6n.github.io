@@ -13,8 +13,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  animation: loaderFade 3.5s forwards;
-  -webkit-animation: loaderFade 3.5s forwards;
+  animation: loaderFade 3s forwards;
+  -webkit-animation: loaderFade 3s forwards;
 }
 
 .lds-roller {
@@ -39,8 +39,8 @@
   border-radius: 50%;
   background: #FEFEFA;
   margin: -3px 0 0 -3px;
-  animation: rollerFade 6s forwards;
-  -webkit-animation: rollerFade 6s forwards;
+  animation: rollerFade 5.5s forwards;
+  -webkit-animation: rollerFade 5.5s forwards;
 }
 
 .lds-roller div:nth-child(1) {
