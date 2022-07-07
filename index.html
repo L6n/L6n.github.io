@@ -36,8 +36,7 @@
                 display: none;
             }
         }
-    </style>
-    <style type="text/css">
+
         .mobileShow {
             display: none;
         }
@@ -70,11 +69,11 @@
     <!-- <script type="text/javascript" src="js/utilities/background.min.js"></script> -->
     <!-- <script type="text/javascript" src="js/patch.js" async></script> -->
     <canvas id="glcanvas" width="100vw" height="100vh" tabindex="1"></canvas>
-    <libs/>
+    <libs />
     <script type="text/javascript" src="js/patch.js" async></script>
-    <corelibs/>
+    <corelibs />
     <script>
-        document.getElementById('glcanvas').addEventListener('touchmove', (e)=>{ e.preventDefault(); }, false);
+        document.getElementById('glcanvas').addEventListener('touchmove', (e) => { e.preventDefault(); }, false);
         function patchInitialized(patch) {
         }
         function patchFinishedLoading(patch) {
@@ -100,15 +99,17 @@
     <div class="menu-right-container">
         <ul class="menu-right" id="menu">
             <li data-menuanchor="about"><a href="#about">About</a></li>
-            <li data-menuanchor="works"><a href="#works">Works</a></li>
+            <!-- <li data-menuanchor="works"><a href="#works">Works</a></li> -->
             <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
         </ul>
     </div>
     <div class="menu-bottomleft-container">
         <ul class="menu-bottomleft">
             <li><a href="https://github.com/L6n" target="_blank"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/loganmies/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a href="https://open.spotify.com/playlist/7sdwHx9beazj3d9DAj5xak?si=YbyuqNQsSeiffAc5X_UoPg" target="_blank"><i class="fab fa-spotify"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/loganmies/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </li>
+            <li><a href="https://open.spotify.com/playlist/7sdwHx9beazj3d9DAj5xak?si=YbyuqNQsSeiffAc5X_UoPg"
+                    target="_blank"><i class="fab fa-spotify"></i></a></li>
         </ul>
     </div>
 
@@ -117,14 +118,13 @@
         <div class="section" id="section0">
             <div class="page">
                 <h2>My name is Logan Mies</h2>
-                <p>You've found my personal site</p>
                 <p>Explore a bit (play some music), and get to know me</p>
             </div>
         </div>
 
         <div class="section" id="section1">
             <div class="page">
-                <h2 class="mobileHide">My background is kind of complicated, but have at it below</h2>
+                <h3 class="mobileHide">Education</h3>
                 <ul class="mobileHide" id="list">
                     <li>BS Mechanical, Thermal-fluid Engineering <a href="https://www.wpi.edu/" target="_blank">@
                             Worcester Polytechnic Institute (WPI) </a>(2014-2018)</li>
@@ -132,6 +132,7 @@
                     <li>MS Computer Science, Machine Learning <a href="https://www.cc.gatech.edu/" target="_blank">@
                             Georgia Tech </a>(Transfer, 2020-<i>Current</i>)</li>
                 </ul>
+                <h3 class="mobileHide">Work</h3>
                 <ul class="mobileHide" id="list">
                     <li>Venture Capital & Private Equity <a href="https://www.lamppostgroup.com/" target="_blank">@ Lamp
                             Post Group </a>(2014)</li>
@@ -146,21 +147,24 @@
                             Ocean Spray </a>(2017-2018)</li>
                     <li>Deployment Engineer, Project Management <a href="https://www.amazonrobotics.com/#/"
                             target="_blank">@ Amazon Robotics </a>(2018-2019)</li>
-                    <li>Food & Bev Engineering Consultant <a href="https://www.dennisgroup.com/"
-                            target="_blank">@ Dennis Group </a>(2019-2021)</li>
-                    <li>Data Engineer <a href="https://www.filevine.com/"
-                        target="_blank">@ Filevine </a>(2021-<i>Current</i>)</li>
+                    <li>Food & Bev Engineering Consultant <a href="https://www.dennisgroup.com/" target="_blank">@
+                            Dennis Group </a>(2019-2021)</li>
+                    <li>Data Engineer <a href="https://www.filevine.com/" target="_blank">@ Filevine
+                        </a>(2021-2021)</li>
+                    <li>Data Reliability Engineer <a href="https://www.filevine.com/" target="_blank">@ Filevine
+                        </a>(2021-<i>Current</i>)</li>
                 </ul>
-                <p class="mobileHide">I love traveling, skiing, good food & bev, and my friends & family (shout-out to <a
-                        href="https://imgur.com/a/r7Vr7hU" target="_blank">Lulu</a> & <a
+                <h3 class="mobileHide">Personal</h3>
+                <p class="mobileHide">I love traveling, skiing, good food & bev, and my friends & family (shout-out to
+                    <a href="https://imgur.com/a/r7Vr7hU" target="_blank">Lulu</a> & <a
                         href="https://imgur.com/a/s1orb6g" target="_blank">Lola</a>, my two doggo princesses)</p>
-                <h2 class="mobileShow">My background is long & complicated</h2>
-                <p class="mobileShow">Since you're on mobile, check out my <a
-                        href="https://www.linkedin.com/in/loganmies/" target="_blank">LinkedIn</a></p>
+                <h3 class="mobileShow">My background doesn't fit well here on mobile</h3>
+                <p class="mobileShow">Check out my <a href="https://www.linkedin.com/in/loganmies/"
+                        target="_blank">LinkedIn</a> instead</p>
             </div>
         </div>
 
-        <div class="section" id="section2">
+        <!-- <div class="section" id="section2">
             <div class="slide" id="slide1" data-anchor="slide1">
                 <h3>Kalman Filtering</h3>
                 <img src="/assets/kalman_filters_asteroids.gif" alt="" class="responsive hide"><br><br class="mobileHide">
@@ -214,8 +218,8 @@
                 <p><a href="https://en.wikipedia.org/wiki/Integral_windup" target="_blank" class="mobileHide">Integral
                         Windup (Wiki)</a></p>
             </div>
-        </div>
-        <div class="section" id="section3">
+        </div> -->
+        <div class="section" id="section2">
             <div class="page">
                 <p><a href="mailto:loganmies@gmail.com">loganmies@gmail.com</a></p>
             </div>
@@ -227,7 +231,7 @@
     <script type="text/javascript">
         var myFullpage = new fullpage('#fullpage', {
             menu: '#menu',
-            anchors: ['hello', 'about', 'works', 'contact'],
+            anchors: ['hello', 'about', 'contact'],
             verticalCentered: true,
             autoScrolling: true,
             css3: false,
