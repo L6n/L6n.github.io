@@ -1,67 +1,78 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
-<head>
+  <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149515626-1"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-149515626-1"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-149515626-1');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-149515626-1");
     </script>
 
     <!-- General HTML Info -->
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Logan Mies</title>
-    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
-    <link rel="icon" href="assets/Fav.png">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/utilities/fullpage.css">
-    <link rel="stylesheet" href="css/utilities/loading.css">
-    <link rel="stylesheet" href="css/main/main.css">
-    <script src="https://kit.fontawesome.com/55e7b3ef6e.js" crossorigin="anonymous"></script>
+    <meta
+      name="viewport"
+      content="width=device-width,user-scalable=no,initial-scale=1"
+    />
+    <link rel="icon" href="assets/Fav.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/utilities/fullpage.css" />
+    <link rel="stylesheet" href="css/utilities/loading.css" />
+    <link rel="stylesheet" href="css/main/main.css" />
+    <script
+      src="https://kit.fontawesome.com/55e7b3ef6e.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Mobile Hide Functionality -->
     <style type="text/css">
+      .mobileHide {
+        display: inline;
+      }
+
+      @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
         .mobileHide {
-            display: inline;
+          display: none;
         }
+      }
 
-        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-            .mobileHide {
-                display: none;
-            }
-        }
+      .mobileShow {
+        display: none;
+      }
 
+      @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
         .mobileShow {
-            display: none;
+          display: inline;
         }
-
-        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-            .mobileShow {
-                display: inline;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Loading Overlay -->
     <div class="loadOverlay">
-        <div class="lds-roller">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+      <div class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
 
     <!-- Background Patch -->
@@ -73,116 +84,240 @@
     <script type="text/javascript" src="js/patch.js" async></script>
     <corelibs />
     <script>
-        document.getElementById('glcanvas').addEventListener('touchmove', (e) => { e.preventDefault(); }, false);
-        function patchInitialized(patch) {
-        }
-        function patchFinishedLoading(patch) {
-        }
-        document.addEventListener('CABLES.jsLoaded', function (event) {
-            CABLES.patch = new CABLES.Patch({
-                patch: CABLES.exportedPatch,
-                prefixAssetPath: '',
-                glCanvasId: 'glcanvas',
-                glCanvasResizeToWindow: true,
-                onPatchLoaded: patchInitialized,
-                onFinishedLoading: patchFinishedLoading,
-            });
+      document.getElementById("glcanvas").addEventListener(
+        "touchmove",
+        (e) => {
+          e.preventDefault();
+        },
+        false
+      );
+      function patchInitialized(patch) {}
+      function patchFinishedLoading(patch) {}
+      document.addEventListener("CABLES.jsLoaded", function (event) {
+        CABLES.patch = new CABLES.Patch({
+          patch: CABLES.exportedPatch,
+          prefixAssetPath: "",
+          glCanvasId: "glcanvas",
+          glCanvasResizeToWindow: true,
+          onPatchLoaded: patchInitialized,
+          onFinishedLoading: patchFinishedLoading,
         });
+      });
     </script>
 
     <!-- FullpageJS Menus -->
     <div class="menu-left-container">
-        <ul class="menu-left" id="menu">
-            <li data-menuanchor="hello" class="active"><a href="#hello">Hello</a></li>
-        </ul>
+      <ul class="menu-left" id="menu">
+        <li data-menuanchor="hello" class="active">
+          <a class="mobileHide" href="#hello">Hello</a>
+          <a class="mobileShow emoji" href="#hello">&#128075;</a>
+        </li>
+      </ul>
     </div>
     <div class="menu-right-container">
-        <ul class="menu-right" id="menu">
-            <li data-menuanchor="about"><a href="#about">About</a></li>
-            <!-- <li data-menuanchor="works"><a href="#works">Works</a></li> -->
-            <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
-        </ul>
+      <ul class="menu-right" id="menu">
+        <li data-menuanchor="work">
+          <a class="mobileHide" href="#work">Work</a>
+          <a class="mobileShow emoji" href="#work">&#128184;</a>
+        </li>
+        <li data-menuanchor="education">
+          <a class="mobileHide" href="#education">Education</a>
+          <a class="mobileShow emoji" href="#education"
+            >&#128104;&#8205;&#127891;</a
+          >
+        </li>
+        <li data-menuanchor="personal">
+          <a class="mobileHide" href="#personal">Personal</a>
+          <a class="mobileShow emoji" href="#personal">&#9975;&#65039;</a>
+        </li>
+        <li data-menuanchor="contact">
+          <a class="mobileHide" href="#contact">Contact</a>
+          <a class="mobileShow emoji" href="#contact">&#128172;</a>
+        </li>
+      </ul>
     </div>
     <div class="menu-bottomleft-container">
-        <ul class="menu-bottomleft">
-            <li><a href="https://github.com/L6n" target="_blank"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/loganmies/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            </li>
-            <li><a href="https://open.spotify.com/playlist/7sdwHx9beazj3d9DAj5xak?si=YbyuqNQsSeiffAc5X_UoPg"
-                    target="_blank"><i class="fab fa-spotify"></i></a></li>
-        </ul>
+      <ul class="menu-bottomleft">
+        <li>
+          <a href="https://github.com/L6n" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/loganmies/" target="_blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://open.spotify.com/playlist/7sdwHx9beazj3d9DAj5xak?si=YbyuqNQsSeiffAc5X_UoPg"
+            target="_blank"
+            ><i class="fab fa-spotify"></i
+          ></a>
+        </li>
+      </ul>
     </div>
 
     <!-- FullpageJS Main -->
     <div id="fullpage">
-        <div class="section" id="section0">
-            <div class="page">
-                <h2>My name is Logan Mies</h2>
-                <p>Explore a bit, play some music, and get to know me</p>
-            </div>
+      <div class="section" id="section0">
+        <div class="page">
+          <h2>My name is Logan Mies</h2>
+          <p>Explore a bit and get to know me</p>
         </div>
+      </div>
+      <div class="section" id="section1">
+        <div class="page">
+          <ul class="mobileHide" id="list">
+            <li>
+              Data Engineering, Technical Lead (2022-<i>Current</i>)
+              <!-- <br /> -->
+              <a href="https://www.filevine.com/" target="_blank"
+                >@ Filevine
+              </a>
+            </li>
+            <li>
+              Senior Data Engineer (2021-2022)
+              <!-- <br /> -->
+              <a href="https://www.filevine.com/" target="_blank"
+                >@ Filevine
+              </a>
+            </li>
+            <li>
+              Data Engineer (2021-2021)
+              <!-- <br /> -->
+              <a href="https://www.filevine.com/" target="_blank"
+                >@ Filevine
+              </a>
+            </li>
+            <li>
+              Food & Bev Engineering Consultant (2019-2021)
+              <!-- <br /> -->
+              <a href="https://www.dennisgroup.com/" target="_blank"
+                >@ Dennis Group
+              </a>
+            </li>
+            <li>
+              Deployment Engineer, Project Management (2018-2019)
+              <!-- <br /> -->
+              <a
+                href="https://www.linkedin.com/company/amazon-fulfillment-technologies-robotics/#/"
+                target="_blank"
+                >@ Amazon Robotics
+              </a>
+            </li>
+            <li>
+              Process Research & Development (2017-2018)
+              <!-- <br /> -->
+              <a href="https://www.oceanspray.com/" target="_blank"
+                >@ Ocean Spray
+              </a>
+            </li>
+            <li>
+              Innovation & Entreprenuership (2017)
+              <!-- <br /> -->
+              <a href="https://www.commerce.gov/" target="_blank"
+                >@ U.S. Department of Commerce
+              </a>
+            </li>
+            <li>
+              Corporate Social Responsibility (2017)
+              <!-- <br /> -->
+              <a href="https://www.doikham.co.th/en/" target="_blank"
+                >@ Doikham Food Products
+              </a>
+            </li>
+            <li>
+              Product Development (2015)
+              <!-- <br /> -->
+              <a
+                href="https://www.kickstarter.com/projects/mytorch/torch-a-simple-router-for-digital-parenting"
+                target="_blank"
+                >@ Torch
+              </a>
+            </li>
+            <li>
+              Venture Capital & Private Equity (2014)
+              <!-- <br /> -->
+              <a href="https://www.lamppostgroup.com/" target="_blank"
+                >@ Lamp Post Group
+              </a>
+            </li>
+          </ul>
+          <h3 class="mobileShow">
+            My work background doesn't fit well here on mobile
+          </h3>
+          <p class="mobileShow">
+            Check out my
+            <a href="https://www.linkedin.com/in/loganmies/" target="_blank"
+              >LinkedIn</a
+            >
+            instead
+          </p>
+        </div>
+      </div>
 
-        <div class="section" id="section1">
-            <div class="page">
-                <h3 class="mobileHide">Education</h3>
-                <ul class="mobileHide" id="list">
-                    <li>BS Mechanical Engineering (Thermal-fluid concentration) <a href="https://www.wpi.edu/" target="_blank">@
-                            Worcester Polytechnic Institute (WPI) </a>(2014-2018)</li>
-                    <li>MS Data Science <a href="https://www.wpi.edu/" target="_blank">@ WPI </a>(2018-2020)</li>
-                    <li>MS Computer Science (Machine Learning concentration) <a href="https://www.cc.gatech.edu/" target="_blank">@
-                            Georgia Tech </a>(Transfer, 2020-<i>Current</i>)</li>
-                </ul>
-                <h3 class="mobileHide">Work</h3>
-                <ul class="mobileHide" id="list">
-                    <li>Venture Capital & Private Equity <a href="https://www.lamppostgroup.com/" target="_blank">@ Lamp
-                            Post Group </a>(2014)</li>
-                    <li>Product Development <a
-                            href="https://www.kickstarter.com/projects/mytorch/torch-a-simple-router-for-digital-parenting"
-                            target="_blank">@ Torch </a>(2015)</li>
-                    <li>Corporate Social Responsibility <a href="https://www.doikham.co.th/en/" target="_blank">@
-                            Doikham Food Products </a>(2017)</li>
-                    <li>Innovation & Entreprenuership <a href="https://www.commerce.gov/" target="_blank">@ U.S.
-                            Department of Commerce </a>(2017)</li>
-                    <li>Process Research & Development <a href="https://www.oceanspray.com/" target="_blank">@
-                            Ocean Spray </a>(2017-2018)</li>
-                    <li>Deployment Engineer, Project Management <a href="https://www.linkedin.com/company/amazon-fulfillment-technologies-robotics/#/"
-                            target="_blank">@ Amazon Robotics </a>(2018-2019)</li>
-                    <li>Food & Bev Engineering Consultant <a href="https://www.dennisgroup.com/" target="_blank">@
-                            Dennis Group </a>(2019-2021)</li>
-                    <li>Data Engineer <a href="https://www.filevine.com/" target="_blank">@ Filevine
-                        </a>(2021-2021)</li>
-                    <li>Data Reliability Engineer <a href="https://www.filevine.com/" target="_blank">@ Filevine
-                        </a>(2021-2022)</li>
-                    <li>Data Reliability Engineer, Technical Lead <a href="https://www.filevine.com/" target="_blank">@ Filevine
-                        </a>(2022-<i>Current</i>)</li>
-                </ul>
-                <h3 class="mobileHide">Personal</h3>
-                <p class="mobileHide">I love traveling, skiing, good food & bev, and my friends & family (including doggos
-                    <a href="https://imgur.com/a/r7Vr7hU" target="_blank">Lulu</a> & <a
-                        href="https://imgur.com/a/s1orb6g" target="_blank">Lola</a>)</p>
-                <h3 class="mobileShow">My background doesn't fit well here on mobile</h3>
-                <p class="mobileShow">Check out my <a href="https://www.linkedin.com/in/loganmies/"
-                        target="_blank">LinkedIn</a> instead</p>
-            </div>
+      <div class="section" id="section2">
+        <div class="page">
+          <ul id="list">
+            <li>
+              MS Computer Science <br class="mobileShow" />
+              (2020-<i>Current</i>)<br />
+              <a href="https://www.cc.gatech.edu/" target="_blank"
+                >@ Georgia Tech
+              </a>
+            </li>
+            <li>
+              MS Data Science <br class="mobileShow" />
+              (2018-2020)<br />
+              <a class="mobileHide" href="https://www.wpi.edu/" target="_blank"
+                >@ Worcester Polytechnic Institute (WPI)
+              </a>
+              <a class="mobileShow" href="https://www.wpi.edu/" target="_blank"
+                >@ WPI
+              </a>
+            </li>
+            <li>
+              BS Mechanical Engineering <br class="mobileShow" />
+              (2014-2018) <br />
+              <a class="mobileHide" href="https://www.wpi.edu/" target="_blank"
+                >@ Worcester Polytechnic Institute (WPI)
+              </a>
+              <a class="mobileShow" href="https://www.wpi.edu/" target="_blank"
+                >@ WPI
+              </a>
+            </li>
+          </ul>
         </div>
-        <div class="section" id="section2">
-            <div class="page">
-                <p><a href="mailto:loganmies@gmail.com">loganmies@gmail.com</a></p>
-            </div>
+      </div>
+      <div class="section" id="section3">
+        <div class="page">
+          <p>
+            I love traveling, skiing, good food & bev, and my friends & family
+            <br class="mobileHide" />
+            (including doggos
+            <a href="https://imgur.com/a/r7Vr7hU" target="_blank">Lulu</a> &
+            <a href="https://imgur.com/a/s1orb6g" target="_blank">Lola</a>)
+          </p>
         </div>
+      </div>
+      <div class="section" id="section4">
+        <div class="page">
+          <p>loganmies@gmail.com</p>
+        </div>
+      </div>
     </div>
 
     <!-- JS Connections -->
     <script src="js/utilities/fullpage.extensions.min.js"></script>
     <script type="text/javascript">
-        var myFullpage = new fullpage('#fullpage', {
-            menu: '#menu',
-            anchors: ['hello', 'about', 'contact'],
-            verticalCentered: true,
-            autoScrolling: true,
-            css3: false,
-        });
+      var myFullpage = new fullpage("#fullpage", {
+        menu: "#menu",
+        anchors: ["hello", "work", "education", "personal", "contact"],
+        verticalCentered: true,
+        autoScrolling: true,
+        css3: false,
+      });
     </script>
-</body>
-
+  </body>
 </html>
